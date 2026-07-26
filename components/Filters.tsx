@@ -16,13 +16,13 @@ export default function Filters() {
   }
 
   const selectClass =
-    "focus-ring w-full rounded-lg border border-white/10 bg-ink px-3 py-2 text-[14px] text-white";
+    "focus-ring w-full rounded-lg border border-black/10 bg-offwhite px-3 py-2 text-[14px] text-ink";
   const labelClass =
-    "mb-1.5 block text-[11px] font-medium uppercase tracking-wide text-white/40";
+    "mb-1.5 block text-[11px] font-medium uppercase tracking-wide text-graphite/45";
 
   return (
-    <aside className="h-fit rounded-2xl border border-white/10 bg-navy p-6">
-      <p className="font-display text-[15px] font-semibold text-white">Filtrar</p>
+    <aside className="h-fit rounded-2xl bg-white p-6 ring-1 ring-black/5">
+      <p className="font-display text-[15px] font-semibold text-ink">Filtrar</p>
 
       <div className="mt-5 space-y-5">
         <label className="block">

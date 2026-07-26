@@ -27,79 +27,74 @@ export default function SearchWidget() {
   }
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex w-full max-w-3xl flex-col gap-3 rounded-2xl border border-white/10 bg-white/[0.06] p-2.5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] backdrop-blur-xl md:flex-row md:items-center md:gap-0 md:p-2"
-    >
-      {/* Tabs */}
-      <div className="flex shrink-0 gap-1 px-1 md:px-1">
+    <div className="w-full max-w-2xl rounded-2xl bg-white p-2 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.35)]">
+      <div className="flex gap-1 px-2 pt-2">
         {tabs.map((t) => (
           <button
             key={t}
             type="button"
             onClick={() => setTab(t)}
             className={
-              "focus-ring rounded-xl px-4 py-2.5 text-[13px] font-semibold transition " +
+              "focus-ring rounded-lg px-4 py-2 text-[13px] font-semibold transition " +
               (tab === t
-                ? "bg-white/10 text-white"
-                : "text-white/45 hover:text-white/75")
+                ? "bg-sand text-ink"
+                : "text-graphite/50 hover:text-graphite")
             }
           >
             {t}
           </button>
         ))}
       </div>
-
-      <div className="hidden h-9 w-px shrink-0 bg-white/10 md:block" />
-
-      {tab !== "Vender" ? (
-        <>
-          <label className="flex flex-1 flex-col px-4 py-1.5 text-left">
-            <span className="text-[10px] font-medium uppercase tracking-wide text-white/35">
-              Tipo de imóvel
-            </span>
-            <select
-              value={type}
-              onChange={(e) => setType(e.target.value)}
-              className="focus-ring -ml-1 bg-transparent py-0.5 text-[14px] text-white outline-none [&>option]:text-ink"
-            >
-              <option value="">Qualquer tipo</option>
-              {PROPERTY_TYPES.map((t) => (
-                <option key={t} value={t}>{t}</option>
-              ))}
-            </select>
-          </label>
-
-          <div className="hidden h-9 w-px shrink-0 bg-white/10 md:block" />
-
-          <label className="flex flex-1 flex-col px-4 py-1.5 text-left">
-            <span className="text-[10px] font-medium uppercase tracking-wide text-white/35">
-              Faixa de preço
-            </span>
-            <select
-              value={price}
-              onChange={(e) => setPrice(e.target.value)}
-              className="focus-ring -ml-1 bg-transparent py-0.5 text-[14px] text-white outline-none [&>option]:text-ink"
-            >
-              <option value="">Qualquer valor</option>
-              {PRICE_RANGES.map((r) => (
-                <option key={r.value} value={r.value}>{r.label}</option>
-              ))}
-            </select>
-          </label>
-        </>
-      ) : (
-        <p className="flex-1 px-4 py-2 text-left text-[13px] text-white/60">
-          Conte pra gente sobre o seu imóvel pelo WhatsApp.
-        </p>
-      )}
-
-      <button
-        type="submit"
-        className="focus-ring shrink-0 rounded-xl bg-ember px-6 py-3 text-[13px] font-semibold uppercase tracking-wide text-white transition hover:bg-emberDark"
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-3 p-4 pt-3 md:flex-row md:items-end"
       >
-        {tab === "Vender" ? "Falar com a equipe" : "Buscar"} →
-      </button>
-    </form>
+        {tab !== "Vender" ? (
+          <>
+            <label className="flex-1 text-left">
+              <span className="mb-1 block text-[11px] font-medium uppercase tracking-wide text-graphite/45">
+                Tipo de propriedade
+              </span>
+              <select
+                value={type}
+                onChange={(e) => setType(e.target.value)}
+                className="focus-ring w-full border-b border-black/10 bg-transparent py-1.5 text-[14px] text-ink outline-none"
+              >
+                <option value="">Todos</option>
+                {PROPERTY_TYPES.map((t) => (
+                  <option key={t} value={t}>{t}</option>
+                ))}
+              </select>
+            </label>
+            <label className="flex-1 text-left">
+              <span className="mb-1 block text-[11px] font-medium uppercase tracking-wide text-graphite/45">
+                Preços
+              </span>
+              <select
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
+                className="focus-ring w-full border-b border-black/10 bg-transparent py-1.5 text-[14px] text-ink outline-none"
+              >
+                <option value="">Qualquer valor</option>
+                {PRICE_RANGES.map((r) => (
+                  <option key={r.value} value={r.value}>{r.label}</option>
+                ))}
+              </select>
+            </label>
+          </>
+        ) : (
+          <p className="flex-1 text-left text-[14px] text-graphite/60">
+            Conte pra gente sobre o seu imóvel e receba uma avaliação da nossa
+            equipe pelo WhatsApp.
+          </p>
+        )}
+        <button
+          type="submit"
+          className="focus-ring shrink-0 rounded-xl bg-ember px-6 py-3 text-[14px] font-semibold text-white transition hover:bg-emberDark"
+        >
+          {tab === "Vender" ? "Falar com a equipe" : "Submit"} →
+        </button>
+      </form>
+    </div>
   );
 }

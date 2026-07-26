@@ -30,18 +30,18 @@ function ListingContent({
     <div className="grid gap-8 md:grid-cols-[260px,1fr]">
       <Filters />
       <div>
-        <p className="mb-5 text-[13px] text-white/45">
+        <p className="mb-5 text-[13px] text-graphite/55">
           {list.length} {list.length === 1 ? "imóvel encontrado" : "imóveis encontrados"}
         </p>
         {list.length === 0 ? (
-          <div className="rounded-2xl border border-white/10 bg-navy p-10 text-center">
-            <p className="text-[15px] text-white/60">
+          <div className="rounded-2xl bg-white p-10 text-center ring-1 ring-black/5">
+            <p className="text-[15px] text-graphite/65">
               Nenhum imóvel com esses filtros ainda. Fale com a gente pelo
               WhatsApp que avisamos assim que chegar algo compatível.
             </p>
           </div>
         ) : (
-          <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {list.map((p) => (
               <PropertyCard key={p.slug} property={p} />
             ))}
@@ -58,24 +58,22 @@ export default function ImoveisPage({
   searchParams: { [key: string]: string | undefined };
 }) {
   return (
-    <section className="min-h-screen bg-ink px-6 py-14 md:px-10 md:py-20">
-      <div className="mx-auto max-w-8xl">
-        <p className="text-[12px] font-semibold uppercase tracking-[0.25em] text-ember">
-          Curadoria Imobiliária Curitiba
-        </p>
-        <h1 className="mt-3 font-display text-[32px] font-semibold text-white md:text-[40px]">
-          Imóveis nas regiões nobres da cidade
-        </h1>
-        <p className="mt-3 max-w-xl text-[14px] text-white/50">
-          Todos os imóveis do nosso catálogo são empreendimentos novos, com
-          acabamento de alto padrão, em bairros consolidados perto do centro.
-        </p>
+    <section className="mx-auto max-w-8xl px-6 py-14 md:px-10 md:py-20">
+      <p className="text-[12px] font-semibold uppercase tracking-[0.25em] text-ember">
+        Curadoria Imobiliária Curitiba
+      </p>
+      <h1 className="mt-3 font-display text-[32px] font-bold text-ink md:text-[40px]">
+        Imóveis nas regiões nobres da cidade
+      </h1>
+      <p className="mt-3 max-w-xl text-[14px] text-graphite/55">
+        Todos os imóveis do nosso catálogo são empreendimentos novos, com
+        acabamento de alto padrão, em bairros consolidados perto do centro.
+      </p>
 
-        <div className="mt-10">
-          <Suspense fallback={null}>
-            <ListingContent searchParams={searchParams} />
-          </Suspense>
-        </div>
+      <div className="mt-10">
+        <Suspense fallback={null}>
+          <ListingContent searchParams={searchParams} />
+        </Suspense>
       </div>
     </section>
   );

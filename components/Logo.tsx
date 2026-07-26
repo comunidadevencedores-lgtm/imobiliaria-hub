@@ -6,7 +6,7 @@ export default function Logo({
   className?: string;
 }) {
   const textColor = variant === "light" ? "text-white" : "text-ink";
-  const subColor = variant === "light" ? "text-white/60" : "text-graphite/60";
+  const subColor = variant === "light" ? "text-white/70" : "text-graphite/55";
 
   return (
     <div className={`flex items-center gap-3 ${className}`}>
@@ -14,7 +14,7 @@ export default function Logo({
         IC
       </span>
       <span className="leading-tight">
-        <span className={`block font-display text-[17px] font-semibold ${textColor}`}>
+        <span className={`block font-display text-[15px] font-bold ${textColor}`}>
           Imobiliária
         </span>
         <span className={`block text-[10px] font-medium uppercase tracking-[0.22em] ${subColor}`}>

@@ -15,15 +15,15 @@ export default function ContatoPage({
   const isVender = searchParams.motivo === "vender";
 
   return (
-    <section className="min-h-screen bg-ink px-6 py-20 md:px-10 md:py-28">
+    <section className="mx-auto max-w-8xl px-6 py-20 md:px-10 md:py-28">
       <div className="mx-auto max-w-lg text-center">
         <p className="text-[12px] font-semibold uppercase tracking-[0.25em] text-ember">
           Contato
         </p>
-        <h1 className="mt-3 font-display text-[32px] font-semibold text-white md:text-[38px]">
+        <h1 className="mt-3 font-display text-[32px] font-bold text-ink md:text-[38px]">
           {isVender ? "Quer vender seu imóvel?" : "Fale com a gente"}
         </h1>
-        <p className="mt-4 text-[15px] leading-relaxed text-white/55">
+        <p className="mt-4 text-[15px] leading-relaxed text-graphite/70">
           {isVender
             ? "Conte um pouco sobre o imóvel e a região — nossa equipe faz uma avaliação e retorna com uma proposta de parceria."
             : "Todo o atendimento — dúvidas, visitas e negociação — acontece direto pelo WhatsApp com um consultor. Sem formulários longos, sem espera."}
@@ -42,20 +42,20 @@ export default function ContatoPage({
           Chamar no WhatsApp →
         </a>
 
-        <div className="mt-14 grid grid-cols-2 gap-6 border-t border-white/10 pt-10 text-left">
+        <div className="mt-14 grid grid-cols-2 gap-6 border-t border-black/10 pt-10 text-left">
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-wide text-white/35">
+            <p className="text-[11px] font-semibold uppercase tracking-wide text-graphite/40">
               Região de atuação
             </p>
-            <p className="mt-1.5 text-[14px] text-white/60">
+            <p className="mt-1.5 text-[14px] text-graphite/70">
               {allNeighborhoods.join(", ")}
             </p>
           </div>
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-wide text-white/35">
+            <p className="text-[11px] font-semibold uppercase tracking-wide text-graphite/40">
               Atendimento
             </p>
-            <p className="mt-1.5 text-[14px] text-white/60">
+            <p className="mt-1.5 text-[14px] text-graphite/70">
               Segunda a sábado, 9h às 19h
             </p>
           </div>
