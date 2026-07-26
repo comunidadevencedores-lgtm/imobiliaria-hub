@@ -1,155 +1,160 @@
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
-import type { Metadata } from "next";
-import { getPropertyBySlug, properties } from "@/lib/properties";
-import { formatPrice, whatsappVisitLink } from "@/lib/format";
+import SearchWidget from "@/components/SearchWidget";
+import PropertyCard, { cardTags } from "@/components/PropertyCard";
+import { properties } from "@/lib/properties";
+import { whatsappLink } from "@/lib/format";
 
-export function generateStaticParams() {
-  return properties.map((p) => ({ slug: p.slug }));
-}
-
-export function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Metadata {
-  const property = getPropertyBySlug(params.slug);
-  if (!property) return {};
-  return {
-    title: `${property.title} — ${property.neighborhood}, Curitiba`,
-    description: property.description,
-  };
-}
-
-export default function PropertyPage({ params }: { params: { slug: string } }) {
-  const property = getPropertyBySlug(params.slug);
-  if (!property) notFound();
-
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "RealEstateListing",
-    name: property.title,
-    description: property.description,
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: property.neighborhood,
-      addressRegion: "PR",
-      addressCountry: "BR",
-    },
-    numberOfRooms: property.bedrooms,
-    floorSize: { "@type": "QuantitativeValue", value: property.area, unitCode: "MTK" },
-    offers: {
-      "@type": "Offer",
-      price: property.price,
-      priceCurrency: "BRL",
-    },
-  };
+export default function Home() {
+  const featured = properties.slice(0, 3);
 
   return (
-    <section className="mx-auto max-w-8xl px-6 py-10 md:px-10 md:py-14">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+    <>
+      {/* Hero — única seção escura do site (foto), como sempre foi */}
+      <section className="relative flex min-h-[92vh] flex-col items-center justify-center overflow-hidden bg-ink px-6 text-center">
+        <Image
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80"
+          alt="Apartamento de alto padrão em Curitiba"
+          fill
+          priority
+          className="object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/80 to-ink" />
 
-      <Link href="/imoveis" className="focus-ring text-[13px] font-medium text-graphite/55 hover:text-ink">
-        ← Voltar para imóveis
-      </Link>
-
-      {/* Galeria */}
-      <div className="mt-5 grid grid-cols-4 gap-2 overflow-hidden rounded-2xl">
-        <div className="relative col-span-4 aspect-[16/9] md:col-span-2 md:aspect-auto md:row-span-2">
-          <Image src={property.gallery[0]} alt={property.title} fill className="object-cover" priority />
-        </div>
-        {property.gallery.slice(1, 5).map((src, i) => (
-          <div key={i} className="relative hidden aspect-square md:block">
-            <Image src={src} alt={`${property.title} ${i + 2}`} fill className="object-cover" />
-          </div>
-        ))}
-      </div>
-      <p className="mt-2 text-[12px] text-graphite/35">
-        Galeria completa com as 20 fotos do imóvel disponível no painel — mostrando aqui uma seleção.
-      </p>
-
-      <div className="mt-10 grid gap-10 lg:grid-cols-[1fr,360px]">
-        <div>
-          <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-ember">
-            {property.neighborhood} · {property.operation === "Comprar" ? "À venda" : "Para alugar"}
+        <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center pt-20">
+          <p className="text-[12px] font-semibold uppercase tracking-[0.3em] text-ember">
+            Regiões nobres · Curitiba
           </p>
-          <h1 className="mt-2 font-display text-[30px] font-bold text-ink md:text-[36px]">
-            {property.title}
+          <h1 className="mt-6 font-display text-[42px] font-semibold leading-[1.15] text-white md:text-[56px]">
+            Endereços que definem Curitiba.
           </h1>
-
-          <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-[14px] text-graphite/65">
-            <span>{property.type}</span>
-            <span>{property.area} m²</span>
-            <span>{property.bedrooms} quartos</span>
-            <span>{property.suites} suíte{property.suites > 1 ? "s" : ""}</span>
-            <span>{property.parking} vaga{property.parking > 1 ? "s" : ""}</span>
-          </div>
-
-          <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-graphite/80">
-            {property.description}
+          <p className="mt-5 max-w-md text-[15px] leading-relaxed text-white/60">
+            Curadoria de imóveis novos e de alto padrão no Batel, Bigorrilho,
+            Água Verde e outras regiões centrais mais desejadas da cidade.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-3">
-            {property.highlights.map((h) => (
-              <span
-                key={h}
-                className="rounded-full bg-sand px-3.5 py-1.5 text-[12px] font-medium text-graphite/70"
-              >
-                {h}
-              </span>
+          <div className="mt-10 w-full">
+            <SearchWidget />
+          </div>
+        </div>
+      </section>
+
+      {/* Curadoria — vitrine editorial, direto no fundo off-white */}
+      <section className="bg-offwhite px-6 py-24 md:px-10">
+        <div className="mx-auto max-w-8xl">
+          <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-ember">
+                Curadoria Imobiliária Curitiba
+              </p>
+              <h2 className="mt-2 font-display text-[30px] font-semibold text-ink">
+                Imóveis selecionados
+              </h2>
+            </div>
+            <Link
+              href="/imoveis"
+              className="focus-ring text-[13px] font-semibold text-graphite/60 transition hover:text-ink"
+            >
+              Ver todo o catálogo →
+            </Link>
+          </div>
+
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {featured.map((p, i) => (
+              <PropertyCard key={p.slug} property={p} tag={cardTags[String(i)]} />
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="mt-10">
-            <p className="mb-3 font-display text-[16px] font-semibold text-ink">
-              Vídeo do imóvel
-            </p>
-            {property.videoUrl ? (
-              <div className="aspect-video overflow-hidden rounded-2xl">
-                <iframe
-                  src={property.videoUrl}
-                  title={`Vídeo — ${property.title}`}
-                  className="h-full w-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
+      {/* Painel de confiança — off-white, azul entra só como detalhe (um dos ícones) */}
+      <section className="bg-sand px-6 py-20 md:px-10">
+        <div className="mx-auto grid max-w-8xl gap-6 lg:grid-cols-[1.3fr,1fr]">
+          <div className="relative overflow-hidden rounded-2xl bg-ink p-10">
+            <Image
+              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80"
+              alt="Curitiba"
+              fill
+              className="object-cover opacity-20"
+            />
+            <div className="relative">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-ember">
+                Imobiliária Curitiba
+              </p>
+              <h3 className="mt-3 max-w-sm font-display text-[26px] font-semibold text-white">
+                Curadoria em vez de catálogo genérico.
+              </h3>
+              <p className="mt-4 max-w-sm text-[14px] leading-relaxed text-white/60">
+                Trabalhamos só com empreendimentos novos, nas regiões mais
+                consolidadas e desejadas de Curitiba. Cada imóvel passa por
+                uma seleção antes de entrar no site.
+              </p>
+              <div className="mt-8 flex gap-10">
+                <div>
+                  <p className="font-display text-[26px] font-semibold text-white">8</p>
+                  <p className="mt-1 text-[11px] uppercase tracking-wide text-white/40">
+                    Regiões nobres
+                  </p>
+                </div>
+                <div>
+                  <p className="font-display text-[26px] font-semibold text-white">100%</p>
+                  <p className="mt-1 text-[11px] uppercase tracking-wide text-white/40">
+                    Empreendimentos novos
+                  </p>
+                </div>
               </div>
-            ) : (
-              <div className="flex aspect-video items-center justify-center rounded-2xl border border-dashed border-black/10 bg-white">
-                <p className="text-[13px] text-graphite/35">
-                  Vídeo deste imóvel será publicado em breve
-                </p>
-              </div>
-            )}
+            </div>
+          </div>
+
+          <div className="grid gap-6">
+            <div className="rounded-2xl bg-white p-7 ring-1 ring-black/5">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-ember/10 text-ember">
+                ✓
+              </span>
+              <h4 className="mt-4 font-display text-[17px] font-semibold text-ink">
+                Curadoria criteriosa
+              </h4>
+              <p className="mt-2 text-[13px] leading-relaxed text-graphite/55">
+                Só entram no catálogo imóveis novos, de alto padrão, com
+                localização e construtora verificadas.
+              </p>
+            </div>
+            <div className="rounded-2xl bg-white p-7 ring-1 ring-black/5">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-blueDeep/10 text-blueDeep">
+                →
+              </span>
+              <h4 className="mt-4 font-display text-[17px] font-semibold text-ink">
+                Atendimento direto
+              </h4>
+              <p className="mt-2 text-[13px] leading-relaxed text-graphite/55">
+                Sem formulários longos: toda dúvida e visita são combinadas
+                direto com um consultor, pelo WhatsApp.
+              </p>
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* Card de contato / agendamento */}
-        <aside className="h-fit rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5">
-          <p className="font-display text-[22px] font-bold text-ink">
-            {formatPrice(property.price)}
+      {/* Captura via WhatsApp — off-white, com um filete azul de detalhe */}
+      <section className="bg-offwhite px-6 py-24 md:px-10">
+        <div className="mx-auto max-w-2xl rounded-2xl border-t-4 border-blueDeep bg-white px-8 py-14 text-center shadow-sm ring-1 ring-black/5">
+          <h3 className="font-display text-[26px] font-semibold text-ink md:text-[30px]">
+            Quer saber em primeira mão dos próximos lançamentos?
+          </h3>
+          <p className="mx-auto mt-4 max-w-md text-[14px] text-graphite/60">
+            Fale com um consultor pelo WhatsApp e receba oportunidades das
+            regiões nobres de Curitiba antes de irem para o site.
           </p>
-          <p className="mt-1 text-[13px] text-graphite/45">
-            {property.operation === "Comprar" ? "Valor de venda" : "Valor mensal de aluguel"}
-          </p>
-
           <a
-            href={whatsappVisitLink(property.title)}
+            href={whatsappLink("Olá! Quero receber novidades de lançamentos da Imobiliária Curitiba.")}
             target="_blank"
             rel="noreferrer"
-            className="focus-ring mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-ember px-5 py-3.5 text-[14px] font-semibold text-white transition hover:bg-emberDark"
+            className="focus-ring mt-8 inline-flex items-center gap-2 rounded-xl bg-ember px-7 py-3.5 text-[14px] font-semibold text-white transition hover:bg-emberDark"
           >
-            Agendar visita pelo WhatsApp
+            Falar no WhatsApp →
           </a>
-          <p className="mt-3 text-center text-[12px] text-graphite/40">
-            Resposta em poucos minutos, direto com um consultor.
-          </p>
-        </aside>
-      </div>
-    </section>
+        </div>
+      </section>
+    </>
   );
 }

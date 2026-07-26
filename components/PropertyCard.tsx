@@ -17,11 +17,8 @@ export default function PropertyCard({
   tag?: string;
 }) {
   return (
-    <Link
-      href={`/imoveis/${property.slug}`}
-      className="focus-ring group block overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-black/5 transition hover:shadow-md"
-    >
-      <div className="relative aspect-[4/3] overflow-hidden">
+    <Link href={`/imoveis/${property.slug}`} className="focus-ring group block">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
         <Image
           src={property.cover}
           alt={property.title}
@@ -34,21 +31,21 @@ export default function PropertyCard({
             {tag}
           </span>
         )}
-        <span className="absolute right-3 top-3 rounded-full bg-white/95 px-3 py-1 text-[11px] font-semibold text-ink">
+        <span className="absolute right-3 top-3 rounded-full bg-ink/70 px-3 py-1 text-[11px] font-medium text-white backdrop-blur">
           {property.operation === "Comprar" ? "À venda" : "Aluguel"}
         </span>
       </div>
-      <div className="p-5">
+      <div className="mt-4">
         <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-ember">
           {property.neighborhood}
         </p>
-        <h3 className="mt-1.5 font-display text-[17px] font-semibold text-ink">
+        <h3 className="mt-1 font-display text-[18px] font-semibold text-ink">
           {property.title}
         </h3>
         <p className="mt-1 text-[13px] text-graphite/55">
           {property.type} · {property.area} m² · {property.bedrooms} quartos
         </p>
-        <p className="mt-3 font-display text-[18px] font-bold text-ink">
+        <p className="mt-2 font-display text-[17px] font-semibold text-ink">
           {formatPrice(property.price)}
         </p>
       </div>

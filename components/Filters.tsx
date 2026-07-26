@@ -16,10 +16,13 @@ export default function Filters() {
   }
 
   const selectClass =
-    "focus-ring w-full rounded-lg border border-black/10 bg-offwhite px-3 py-2 text-[14px] text-ink";
+    "focus-ring w-full appearance-none rounded-lg border border-black/10 bg-offwhite px-3 py-2 text-[14px] text-ink";
   const labelClass =
     "mb-1.5 block text-[11px] font-medium uppercase tracking-wide text-graphite/45";
 
+  // Filtros da barra lateral usam <select> nativo mesmo (lista curta, sem choque
+  // visual grande) — o dropdown customizado fica reservado pra barra de busca
+  // flutuante, que é onde o contraste com o tema ficava mais evidente.
   return (
     <aside className="h-fit rounded-2xl bg-white p-6 ring-1 ring-black/5">
       <p className="font-display text-[15px] font-semibold text-ink">Filtrar</p>
