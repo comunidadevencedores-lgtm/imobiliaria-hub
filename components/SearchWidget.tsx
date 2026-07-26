@@ -2,20 +2,26 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { PROPERTY_TYPES, PRICE_RANGES } from "@/lib/constants";
+import { PROPERTY_TYPES, priceRangesFor } from "@/lib/constants";
 import Select from "./Select";
 
 const tabs = ["Comprar", "Alugar", "Vender"] as const;
 type Tab = (typeof tabs)[number];
 
 const typeOptions = PROPERTY_TYPES.map((t) => ({ value: t, label: t }));
-const priceOptions = PRICE_RANGES.map((r) => ({ value: r.value, label: r.label }));
 
 export default function SearchWidget() {
   const router = useRouter();
   const [tab, setTab] = useState<Tab>("Comprar");
   const [type, setType] = useState("");
   const [price, setPrice] = useState("");
+
+  const priceOptions = priceRangesFor(tab).map((r) => ({ value: r.value, label: r.label }));
+
+  function selectTab(t: Tab) {
+    setTab(t);
+    setPrice(""); // faixas de comprar e alugar usam valores diferentes
+  }
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -41,7 +47,7 @@ export default function SearchWidget() {
           <button
             key={t}
             type="button"
-            onClick={() => setTab(t)}
+            onClick={() => selectTab(t)}
             className={
               "focus-ring rounded-xl px-4 py-2.5 text-[13px] font-semibold transition " +
               (tab === t

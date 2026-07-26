@@ -2,16 +2,20 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { allNeighborhoods } from "@/lib/properties";
-import { PROPERTY_TYPES, PRICE_RANGES } from "@/lib/constants";
+import { PROPERTY_TYPES, priceRangesFor } from "@/lib/constants";
 
 export default function Filters() {
   const router = useRouter();
   const params = useSearchParams();
+  const operacao = (params.get("operacao") as "Comprar" | "Alugar" | null) ?? "Comprar";
+  const priceRanges = priceRangesFor(operacao);
 
   function update(key: string, value: string) {
     const next = new URLSearchParams(params.toString());
     if (value) next.set(key, value);
     else next.delete(key);
+    // Faixas de comprar e alugar usam valores diferentes — troca de operação limpa o preço.
+    if (key === "operacao") next.delete("preco");
     router.push(`/imoveis?${next.toString()}`);
   }
 
@@ -77,7 +81,7 @@ export default function Filters() {
             className={selectClass}
           >
             <option value="">Qualquer valor</option>
-            {PRICE_RANGES.map((r) => (
+            {priceRanges.map((r) => (
               <option key={r.value} value={r.value}>{r.label}</option>
             ))}
           </select>

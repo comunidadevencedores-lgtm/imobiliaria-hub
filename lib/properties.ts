@@ -82,7 +82,11 @@ export const properties: Property[] = Array.from({ length: 24 }, (_, i) => {
   const operation: Property["operation"] = i % 6 === 0 ? "Alugar" : "Comprar";
   const bedrooms = 2 + (i % 3);
   const area = 90 + (i % 6) * 35;
-  const basePrice = 420000 + (i % 10) * 95000 + (type === "Cobertura" ? 450000 : 0);
+  const salePrice = 420000 + (i % 10) * 95000 + (type === "Cobertura" ? 450000 : 0);
+  // Aluguel mensal segue faixa própria (bem menor que o valor de venda) —
+  // gira em torno de 0,4%-0,6% do valor do imóvel ao mês, padrão do mercado.
+  const rentPrice = Math.round((salePrice * 0.005) / 100) * 100;
+  const price = operation === "Alugar" ? rentPrice : salePrice;
   const title = `${titles[i % titles.length]}`;
   const slug = slugify(`${title}-${neighborhood}-${i}`);
   const gallery = makeGallery(i);
@@ -92,7 +96,7 @@ export const properties: Property[] = Array.from({ length: 24 }, (_, i) => {
     neighborhood,
     type,
     operation,
-    price: basePrice,
+    price,
     area,
     bedrooms,
     suites: Math.max(1, bedrooms - 1),

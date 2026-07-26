@@ -11,15 +11,17 @@ export default function Home() {
   return (
     <>
       {/* Hero — única seção escura do site (foto), como sempre foi */}
-      <section className="relative flex min-h-[92vh] flex-col items-center justify-center overflow-hidden bg-ink px-6 text-center">
-        <Image
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80"
-          alt="Apartamento de alto padrão em Curitiba"
-          fill
-          priority
-          className="object-cover opacity-30"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/80 to-ink" />
+      <section className="relative flex min-h-[92vh] flex-col items-center justify-center bg-ink px-6 text-center">
+        <div className="absolute inset-0 overflow-hidden">
+          <Image
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80"
+            alt="Apartamento de alto padrão em Curitiba"
+            fill
+            priority
+            className="object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/80 to-ink" />
+        </div>
 
         <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center pt-20">
           <p className="text-[12px] font-semibold uppercase tracking-[0.3em] text-ember">
