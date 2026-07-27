@@ -10,10 +10,7 @@ export default function Home() {
 
   return (
     <>
-      {/* Hero 100% Centralizado e Ajustado na Tela */}
       <section className="relative flex min-h-screen w-full items-center justify-center bg-ink px-4 py-20 text-center">
-        
-        {/* FOTO DE FUNDO */}
         <div className="absolute inset-0 overflow-hidden">
           <Image
             src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=80"
@@ -22,30 +19,22 @@ export default function Home() {
             priority
             className="object-cover opacity-40"
           />
-          {/* Sombreamento para destacar a logo e busca */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
         </div>
 
-        {/* CONTEÚDO CRAVADO NO CENTRO */}
         <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center justify-center">
-          
-          {/* LOGO SOLAR CENTRALIZADA */}
           <div className="mb-10 flex w-full justify-center">
             <Image
               src="/logo.png"
-              alt="Solar Imóveis"
+              alt="Imobiliária Curitiba"
               width={500}
               height={160}
               priority
-              className="h-auto w-64 md:w-96 object-contain filter drop-shadow-lg"
+              className="h-auto w-64 drop-shadow-lg md:w-96"
             />
           </div>
 
-          {/* BUSCADOR DENTRO DO CONTEÚDO */}
-          <div className="w-full">
-            <SearchWidget />
-          </div>
-
+          <SearchWidget />
         </div>
       </section>
 
@@ -155,7 +144,7 @@ export default function Home() {
             Fale com um consultor pelo WhatsApp e receba oportunidades das
             regiões nobres de Curitiba antes de irem para o site.
           </p>
-          <a
+          
             href={whatsappLink("Olá! Quero receber novidades de lançamentos da Imobiliária Curitiba.")}
             target="_blank"
             rel="noreferrer"
