@@ -27,10 +27,10 @@ export default function Home() {
             <Image
               src="/logo.png"
               alt="Imobiliária Curitiba"
-              width={500}
-              height={160}
+              width={1829}
+              height={502}
               priority
-              className="h-auto w-64 drop-shadow-lg md:w-96"
+              className="h-auto w-64 object-contain drop-shadow-lg md:w-96"
             />
           </div>
 
