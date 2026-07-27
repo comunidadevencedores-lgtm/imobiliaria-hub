@@ -10,40 +10,42 @@ export default function Home() {
 
   return (
     <>
-      {/* Hero com Foto de Fundo de Imóvel/Interior */}
-      <section className="relative flex min-h-[92vh] flex-col items-center justify-center bg-ink px-6 text-center">
+      {/* Hero com Foto de Fundo e Alinhamento Perfeito */}
+      <section className="relative flex min-h-[92vh] w-full flex-col items-center justify-center bg-ink px-4 text-center md:px-8">
         
-        {/* FOTO DE FUNDO (INTERIOR DO IMÓVEL) */}
+        {/* FOTO DE FUNDO */}
         <div className="absolute inset-0 overflow-hidden">
           <Image
-            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=80" // Foto de interior de apartamento de alto padrão
+            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=80"
             alt="Interior de imóvel de alto padrão"
             fill
             priority
-            className="object-cover opacity-40" // Ajuste a opacidade aqui se quiser mais clara/escura
+            className="object-cover opacity-40"
           />
-          {/* Sombra suave para dar leitura nos elementos */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+          {/* Sombra de fundo leve */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
         </div>
 
-        {/* CONTEÚDO CENTRALIZADO */}
-        <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center pt-12">
+        {/* CONTEÚDO 100% CENTRALIZADO */}
+        <div className="relative z-10 flex w-full max-w-6xl flex-col items-center justify-center pt-10">
           
-          {/* LOGO CENTRALIZADA */}
-          <div className="mb-6 flex justify-center">
+          {/* LOGO SOLAR BEM MAIOR */}
+          <div className="mb-12 flex w-full justify-center">
             <Image
-              src="/logo.png" // Garanta que a logo esteja em public/logo.svg
-              alt="Imobiliária Hub"
-              width={320}
-              height={100}
+              src="/logo.svg"
+              alt="Solar Imóveis"
+              width={500}
+              height={160}
               priority
-              className="h-auto w-56 md:w-72 object-contain filter drop-shadow-md"
+              className="h-auto w-72 md:w-[420px] object-contain filter drop-shadow-lg"
             />
           </div>
 
-          {/* BUSCADOR DE PONTA A PONTA */}
-          <div className="mt-6 w-full">
-            <SearchWidget />
+          {/* BUSCADOR 100% CENTRALIZADO */}
+          <div className="flex w-full justify-center">
+            <div className="w-full max-w-5xl">
+              <SearchWidget />
+            </div>
           </div>
 
         </div>
