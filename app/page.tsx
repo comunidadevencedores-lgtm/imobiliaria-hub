@@ -51,7 +51,7 @@ export default function Home() {
               </h2>
             </div>
             <Link
-              <a href="/imoveis"
+              href="/imoveis"
               className="focus-ring text-[13px] font-semibold text-graphite/60 transition hover:text-ink"
             >
               Ver todo o catálogo →
@@ -145,6 +145,7 @@ export default function Home() {
             regiões nobres de Curitiba antes de irem para o site.
           </p>
           
+          <a
             href={whatsappLink("Olá! Quero receber novidades de lançamentos da Imobiliária Curitiba.")}
             target="_blank"
             rel="noreferrer"
