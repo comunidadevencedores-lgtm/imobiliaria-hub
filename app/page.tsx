@@ -51,7 +51,7 @@ export default function Home() {
               </h2>
             </div>
             <Link
-              href="/imoveis"
+              <a href="/imoveis"
               className="focus-ring text-[13px] font-semibold text-graphite/60 transition hover:text-ink"
             >
               Ver todo o catálogo →
