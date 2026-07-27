@@ -39,7 +39,7 @@ export default function SearchWidget() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex w-full max-w-3xl flex-col gap-3 rounded-2xl border border-black/5 bg-white/95 p-2.5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.35)] backdrop-blur-xl md:flex-row md:items-center md:gap-0 md:p-2"
+      className="mx-auto flex w-full max-w-3xl flex-col gap-3 rounded-2xl border border-black/5 bg-white/95 p-2.5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.35)] backdrop-blur-xl md:flex-row md:items-center md:gap-0 md:p-2"
     >
       {/* Tabs */}
       <div className="flex shrink-0 gap-1 px-1">
