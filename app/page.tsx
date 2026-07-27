@@ -32,7 +32,7 @@ export default function Home() {
           {/* LOGO SOLAR BEM MAIOR */}
           <div className="mb-12 flex w-full justify-center">
             <Image
-              src="/logo.svg"
+              src="/logo.png"
               alt="Solar Imóveis"
               width={500}
               height={160}
