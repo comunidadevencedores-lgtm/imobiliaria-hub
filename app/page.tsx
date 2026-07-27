@@ -21,20 +21,8 @@ export default function Home() {
           />
           
         </div>
-
-        <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center pt-20">
-          <p className="text-[12px] font-semibold uppercase tracking-[0.3em] text-ember">
-            Regiões nobres · Curitiba
-          </p>
-          <h1 className="mt-6 font-display text-[42px] font-semibold leading-[1.15] text-white md:text-[56px]">
-            Endereços que definem Curitiba.
-          </h1>
-          <p className="mt-5 max-w-md text-[15px] leading-relaxed text-white/60">
-            Curadoria de imóveis novos e de alto padrão no Batel, Bigorrilho,
-            Água Verde e outras regiões centrais mais desejadas da cidade.
-          </p>
-
-          <div className="mt-10 w-full">
+        
+        
             <SearchWidget />
           </div>
         </div>
