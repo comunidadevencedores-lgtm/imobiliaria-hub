@@ -32,7 +32,7 @@ export default function Home() {
           {/* LOGO SOLAR CENTRALIZADA */}
           <div className="mb-10 flex w-full justify-center">
             <Image
-              src="/logo.svg"
+              src="/logo.png"
               alt="Solar Imóveis"
               width={500}
               height={160}
