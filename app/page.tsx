@@ -32,7 +32,7 @@ export default function Home() {
           {/* LOGO CENTRALIZADA */}
           <div className="mb-6 flex justify-center">
             <Image
-              src="/logo.svg" // Garanta que a logo esteja em public/logo.svg
+              src="/logo.png" // Garanta que a logo esteja em public/logo.svg
               alt="Imobiliária Hub"
               width={320}
               height={100}
