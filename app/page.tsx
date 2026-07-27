@@ -10,7 +10,6 @@ export default function Home() {
 
   return (
     <>
-      {/* Hero — única seção escura do site (foto), como sempre foi */}
       <section className="relative flex min-h-[92vh] flex-col items-center justify-center bg-ink px-6 text-center">
         <div className="absolute inset-0 overflow-hidden">
           <Image
@@ -20,7 +19,7 @@ export default function Home() {
             priority
             className="object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink/80 to-ink" />
+          
         </div>
 
         <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center pt-20">
