@@ -10,40 +10,46 @@ export default function Home() {
 
   return (
     <>
+      {/* Hero com Foto de Fundo de Imóvel/Interior */}
       <section className="relative flex min-h-[92vh] flex-col items-center justify-center bg-ink px-6 text-center">
+        
+        {/* FOTO DE FUNDO (INTERIOR DO IMÓVEL) */}
         <div className="absolute inset-0 overflow-hidden">
           <Image
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80"
-            alt="Apartamento de alto padrão em Curitiba"
+            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=80" // Foto de interior de apartamento de alto padrão
+            alt="Interior de imóvel de alto padrão"
             fill
             priority
-            className="object-cover opacity-30"
+            className="object-cover opacity-40" // Ajuste a opacidade aqui se quiser mais clara/escura
           />
-      {/* Hero Refatorado: Fundo limpo, Logo no centro e Search Widget de ponta a ponta */}
-      <section className="relative flex min-h-[70vh] w-full flex-col items-center justify-center bg-white px-4 py-16 text-center md:px-8">
-        <div className="mx-auto flex w-full max-w-7xl flex-col items-center">
+          {/* Sombra suave para dar leitura nos elementos */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+        </div>
+
+        {/* CONTEÚDO CENTRALIZADO */}
+        <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center pt-12">
           
           {/* LOGO CENTRALIZADA */}
-          <div className="mb-10 flex justify-center">
+          <div className="mb-6 flex justify-center">
             <Image
-              src="/logo.svg" // Salve a logo em /public/logo.svg
+              src="/logo.svg" // Garanta que a logo esteja em public/logo.svg
               alt="Imobiliária Hub"
               width={320}
               height={100}
               priority
-              className="h-auto w-64 md:w-80 object-contain"
+              className="h-auto w-56 md:w-72 object-contain filter drop-shadow-md"
             />
           </div>
 
-          {/* MENU / SEARCH WIDGET DE PONTA A PONTA */}
-          <div className="w-full">
+          {/* BUSCADOR DE PONTA A PONTA */}
+          <div className="mt-6 w-full">
             <SearchWidget />
           </div>
 
         </div>
       </section>
 
-      {/* Curadoria — vitrine editorial, direto no fundo off-white */}
+      {/* Curadoria — vitrine editorial */}
       <section className="bg-offwhite px-6 py-24 md:px-10">
         <div className="mx-auto max-w-8xl">
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
@@ -71,7 +77,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Painel de confiança — off-white, azul entra só como detalhe (um dos ícones) */}
+      {/* Painel de confiança */}
       <section className="bg-sand px-6 py-20 md:px-10">
         <div className="mx-auto grid max-w-8xl gap-6 lg:grid-cols-[1.3fr,1fr]">
           <div className="relative overflow-hidden rounded-2xl bg-ink p-10">
@@ -139,7 +145,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Captura via WhatsApp — off-white, com um filete azul de detalhe */}
+      {/* Captura via WhatsApp */}
       <section className="bg-offwhite px-6 py-24 md:px-10">
         <div className="mx-auto max-w-2xl rounded-2xl border-t-4 border-blueDeep bg-white px-8 py-14 text-center shadow-sm ring-1 ring-black/5">
           <h3 className="font-display text-[26px] font-semibold text-ink md:text-[30px]">
