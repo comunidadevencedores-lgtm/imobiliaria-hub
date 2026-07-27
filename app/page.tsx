@@ -19,12 +19,27 @@ export default function Home() {
             priority
             className="object-cover opacity-30"
           />
+      {/* Hero Refatorado: Fundo limpo, Logo no centro e Search Widget de ponta a ponta */}
+      <section className="relative flex min-h-[70vh] w-full flex-col items-center justify-center bg-white px-4 py-16 text-center md:px-8">
+        <div className="mx-auto flex w-full max-w-7xl flex-col items-center">
           
-        </div>
-        
-        
+          {/* LOGO CENTRALIZADA */}
+          <div className="mb-10 flex justify-center">
+            <Image
+              src="/logo.svg" // Salve a logo em /public/logo.svg
+              alt="Imobiliária Hub"
+              width={320}
+              height={100}
+              priority
+              className="h-auto w-64 md:w-80 object-contain"
+            />
+          </div>
+
+          {/* MENU / SEARCH WIDGET DE PONTA A PONTA */}
+          <div className="w-full">
             <SearchWidget />
           </div>
+
         </div>
       </section>
 
