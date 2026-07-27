@@ -10,8 +10,8 @@ export default function Home() {
 
   return (
     <>
-      {/* Hero com Foto de Fundo e Alinhamento Perfeito */}
-      <section className="relative flex min-h-[92vh] w-full flex-col items-center justify-center bg-ink px-4 text-center md:px-8">
+      {/* Hero 100% Centralizado e Ajustado na Tela */}
+      <section className="relative flex min-h-screen w-full items-center justify-center bg-ink px-4 py-20 text-center">
         
         {/* FOTO DE FUNDO */}
         <div className="absolute inset-0 overflow-hidden">
@@ -22,30 +22,28 @@ export default function Home() {
             priority
             className="object-cover opacity-40"
           />
-          {/* Sombra de fundo leve */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
+          {/* Sombreamento para destacar a logo e busca */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
         </div>
 
-        {/* CONTEÚDO 100% CENTRALIZADO */}
-        <div className="relative z-10 flex w-full max-w-6xl flex-col items-center justify-center pt-10">
+        {/* CONTEÚDO CRAVADO NO CENTRO */}
+        <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center justify-center">
           
-          {/* LOGO SOLAR BEM MAIOR */}
-          <div className="mb-12 flex w-full justify-center">
+          {/* LOGO SOLAR CENTRALIZADA */}
+          <div className="mb-10 flex w-full justify-center">
             <Image
-              src="/logo.png"
+              src="/logo.svg"
               alt="Solar Imóveis"
               width={500}
               height={160}
               priority
-              className="h-auto w-72 md:w-[420px] object-contain filter drop-shadow-lg"
+              className="h-auto w-64 md:w-96 object-contain filter drop-shadow-lg"
             />
           </div>
 
-          {/* BUSCADOR 100% CENTRALIZADO */}
-          <div className="flex w-full justify-center">
-            <div className="w-full max-w-5xl">
-              <SearchWidget />
-            </div>
+          {/* BUSCADOR DENTRO DO CONTEÚDO */}
+          <div className="w-full">
+            <SearchWidget />
           </div>
 
         </div>
