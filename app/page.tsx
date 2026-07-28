@@ -7,7 +7,7 @@ import { properties } from "@/lib/properties";
 import { whatsappLink } from "@/lib/format";
 
 export default function Home() {
-  const featured = properties.slice(0, 3);
+  const featured = properties.slice(0, 4);
 
   return (
     <>
