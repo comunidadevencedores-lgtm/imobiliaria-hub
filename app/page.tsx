@@ -59,9 +59,9 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-8 sm:grid-cols-2">
             {featured.map((p, i) => (
-              <PropertyCard key={p.slug} property={p} tag={cardTags[String(i)]} />
+              <PropertyCardOverlay key={p.slug} property={p} tag={cardTags[String(i)]} />
             ))}
           </div>
         </div>
