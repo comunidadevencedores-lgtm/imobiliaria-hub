@@ -32,16 +32,16 @@ export default function SobrePage() {
         <div className="grid gap-12 lg:grid-cols-[1fr,1fr]">
           <div className="space-y-5 text-[15px] leading-relaxed text-graphite/75">
             <p>
-              A Imobiliária Curitiba nasceu com um recorte claro: em vez de
-              tentar cobrir a cidade inteira, concentramos nosso trabalho nas
-              regiões mais nobres e centrais — Batel, Bigorrilho, Água Verde,
-              Centro Cívico, Cabral, Juvevê, Alto da XV e Champagnat.
+              A Imobiliária Curitiba nasceu com um recorte claro: 
+              em vez de tentar cobrir a cidade inteira, concentramos
+              nosso trabalho nas regiões mais nobres e centrais, Batel,
+              Bigorrilho, Água Verde, Centro Cívico, Cabral, Juvevê, Alto da XV e Champagnat.
             </p>
             <p>
               Trabalhamos apenas com empreendimentos novos, de alta
               qualidade construtiva e localização consolidada. Cada imóvel do
-              nosso catálogo passa por uma curadoria antes de entrar no site
-              — por isso, menos é mais: preferimos uma seleção enxuta e bem
+              nosso catálogo passa por uma curadoria antes de entrar no site,
+              por isso, menos é mais: preferimos uma seleção enxuta e bem
               documentada a um catálogo genérico.
             </p>
             <p>
