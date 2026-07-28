@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Image from "next/image";
 import SearchWidget from "@/components/SearchWidget";
 import PropertyCardOverlay from "@/components/PropertyCardOverlay";
 import { cardTags } from "@/components/PropertyCard";
@@ -38,21 +38,10 @@ export default function Home() {
         </div>
       </section>
 
-      
       {/* Curadoria — vitrine editorial */}
       <section className="bg-offwhite px-6 pb-20 pt-8 md:px-10">
         <div className="mx-auto max-w-8xl">
           <div className="grid gap-1 sm:grid-cols-2">
-            </div>
-            <Link
-              href="/imoveis"
-              className="focus-ring text-[13px] font-semibold text-graphite/60 transition hover:text-ink"
-            >
-              Ver todo o catálogo →
-            </Link>
-          </div>
-
-          <div className="mt-10 grid gap-1 sm:grid-cols-2">
             {featured.map((p, i) => (
               <PropertyCardOverlay key={p.slug} property={p} tag={cardTags[String(i)]} />
             ))}
@@ -139,7 +128,6 @@ export default function Home() {
             regiões nobres de Curitiba antes de irem para o site.
           </p>
           
-          <a
             href={whatsappLink("Olá! Quero receber novidades de lançamentos da Imobiliária Curitiba.")}
             target="_blank"
             rel="noreferrer"
