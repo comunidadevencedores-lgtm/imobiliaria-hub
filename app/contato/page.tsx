@@ -25,8 +25,8 @@ export default function ContatoPage({
         </h1>
         <p className="mt-4 text-[15px] leading-relaxed text-graphite/70">
           {isVender
-            ? "Conte um pouco sobre o imóvel e a região — nossa equipe faz uma avaliação e retorna com uma proposta de parceria."
-            : "Todo o atendimento — dúvidas, visitas e negociação — acontece direto pelo WhatsApp com um consultor. Sem formulários longos, sem espera."}
+            ? "Conte um pouco sobre o imóvel e a região, nossa equipe faz uma avaliação e retorna com uma proposta de parceria."
+            : "Todo o atendimento, dúvidas, visitas e negociação acontecem direto pelo WhatsApp com um consultor. Sem formulários longos, sem espera."}
         </p>
 
         <a
