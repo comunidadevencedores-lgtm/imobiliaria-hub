@@ -40,7 +40,7 @@ export default function Home() {
       </section>
 
       {/* Curadoria — vitrine editorial */}
-      <section className="bg-offwhite px-6 py-24 md:px-10">
+      <section className="bg-offwhite px-6 pb-20 pt-8 md:px-10">
         <div className="mx-auto max-w-8xl">
           <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
             <div>
@@ -59,7 +59,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="mt-10 grid gap-8 sm:grid-cols-2">
+          <div className="mt-10 grid gap-1 sm:grid-cols-2">
             {featured.map((p, i) => (
               <PropertyCardOverlay key={p.slug} property={p} tag={cardTags[String(i)]} />
             ))}
