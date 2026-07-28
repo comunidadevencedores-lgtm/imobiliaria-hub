@@ -13,7 +13,7 @@ export default function PropertyCardOverlay({
   return (
     <Link
       href={`/imoveis/${property.slug}`}
-      className="focus-ring group relative block aspect-[16/10] overflow-hidden rounded-lg"
+      className="focus-ring group relative block aspect-[16/10] overflow-hidden rounded"
     >
       <Image
         src={property.cover}
