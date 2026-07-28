@@ -22,18 +22,18 @@ export default function PropertyCardOverlay({
         sizes="(min-width: 768px) 50vw, 100vw"
         className="object-cover transition duration-500 group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
       {tag && (
-        <span className="absolute left-4 top-4 rounded-full bg-ember px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white">
+        <span className="absolute left-4 top-4 rounded-full bg-ember px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
           {tag}
         </span>
       )}
-      <span className="absolute right-4 top-4 rounded-full bg-ink/70 px-3 py-1 text-[11px] font-medium text-white backdrop-blur">
+      <span className="absolute right-4 top-4 rounded-full bg-ink/70 px-3 py-1 text-[11px] font-medium text-white opacity-0 backdrop-blur transition-opacity duration-300 group-hover:opacity-100">
         {property.operation === "Comprar" ? "À venda" : "Aluguel"}
       </span>
 
-      <div className="absolute inset-x-0 bottom-0 p-5">
+      <div className="absolute inset-x-0 bottom-0 p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
         <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-ember">
           {property.neighborhood}
         </p>
