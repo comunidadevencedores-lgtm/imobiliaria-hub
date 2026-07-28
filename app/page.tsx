@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import SearchWidget from "@/components/SearchWidget";
 import PropertyCardOverlay from "@/components/PropertyCardOverlay";
@@ -39,17 +38,11 @@ export default function Home() {
         </div>
       </section>
 
+      
       {/* Curadoria — vitrine editorial */}
       <section className="bg-offwhite px-6 pb-20 pt-8 md:px-10">
         <div className="mx-auto max-w-8xl">
-          <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-ember">
-                Curadoria Imobiliária Curitiba
-              </p>
-              <h2 className="mt-2 font-display text-[30px] font-semibold text-ink">
-                Imóveis selecionados
-              </h2>
+          <div className="grid gap-1 sm:grid-cols-2">
             </div>
             <Link
               href="/imoveis"
