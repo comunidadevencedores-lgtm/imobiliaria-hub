@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import SearchWidget from "@/components/SearchWidget";
-import PropertyCard, { cardTags } from "@/components/PropertyCard";
+import PropertyCardOverlay, { cardTags } from "@/components/PropertyCardOverlay";
+import { cardTags } from "@/components/PropertyCard";
 import { properties } from "@/lib/properties";
 import { whatsappLink } from "@/lib/format";
 
