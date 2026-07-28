@@ -128,7 +128,7 @@ export default function Home() {
             regiões nobres de Curitiba antes de irem para o site.
           </p>
           
-            href={whatsappLink("Olá! Quero receber novidades de lançamentos da Imobiliária Curitiba.")}
+           <a href={whatsappLink("Olá! Quero receber novidades de lançamentos da Imobiliária Curitiba.")}
             target="_blank"
             rel="noreferrer"
             className="focus-ring mt-8 inline-flex items-center gap-2 rounded-xl bg-ember px-7 py-3.5 text-[14px] font-semibold text-white transition hover:bg-emberDark"
