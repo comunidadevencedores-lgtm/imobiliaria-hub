@@ -59,7 +59,7 @@ export default function SearchWidget() {
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Busque por código do imóvel, categoria, qtd. de cômodos, etc"
+          placeholder="Busque por código do imóvel, categoria, qtd. de cômodos..."
           className="w-full bg-transparent text-[13px] italic text-ink placeholder:text-graphite/40 focus:outline-none"
         />
       </div>
