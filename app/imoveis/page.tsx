@@ -19,6 +19,7 @@ function ListingContent({
 
   let list = properties;
 
+  // Filtro por texto / busca livre (q)
   if (q) {
     const term = q.trim().toLowerCase();
     list = list.filter((p) => {
@@ -26,13 +27,13 @@ function ListingContent({
         p.slug?.toLowerCase().includes(term) ||
         p.title?.toLowerCase().includes(term) ||
         p.neighborhood?.toLowerCase().includes(term) ||
-        p.city?.toLowerCase().includes(term) ||
         p.type?.toLowerCase().includes(term) ||
         p.description?.toLowerCase().includes(term)
       );
     });
   }
 
+  // Demais filtros
   if (operacao) list = list.filter((p) => p.operation === operacao);
   if (regiao) list = list.filter((p) => p.neighborhood === regiao);
   if (tipo) list = list.filter((p) => p.type === tipo);
