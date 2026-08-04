@@ -39,7 +39,7 @@ export default function SearchWidget() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mx-auto flex w-full max-w-3xl flex-col gap-3 rounded-2xl border border-black/5 bg-white/95 p-2.5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.35)] backdrop-blur-xl md:flex-row md:items-center md:gap-0 md:p-2"
+      className="mx-auto flex w-full flex-col gap-3 rounded-2xl border border-black/5 bg-white/95 p-2.5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.35)] backdrop-blur-xl md:flex-row md:items-center md:gap-0 md:p-2"
     >
       {/* Tabs */}
       <div className="flex shrink-0 gap-1 px-1">
@@ -64,23 +64,27 @@ export default function SearchWidget() {
 
       {tab !== "Vender" ? (
         <>
-          <Select
-            label="Tipo de imóvel"
-            value={type}
-            onChange={setType}
-            options={typeOptions}
-            placeholder="Qualquer tipo"
-          />
+          <div className="flex-1">
+            <Select
+              label="Tipo de imóvel"
+              value={type}
+              onChange={setType}
+              options={typeOptions}
+              placeholder="Qualquer tipo"
+            />
+          </div>
 
           <div className="hidden h-9 w-px shrink-0 bg-black/10 md:block" />
 
-          <Select
-            label="Faixa de preço"
-            value={price}
-            onChange={setPrice}
-            options={priceOptions}
-            placeholder="Qualquer valor"
-          />
+          <div className="flex-1">
+            <Select
+              label="Faixa de preço"
+              value={price}
+              onChange={setPrice}
+              options={priceOptions}
+              placeholder="Qualquer valor"
+            />
+          </div>
         </>
       ) : (
         <p className="flex-1 px-4 py-2 text-left text-[13px] text-graphite/60">
