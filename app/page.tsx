@@ -10,6 +10,7 @@ export default function Home() {
 
   return (
     <>
+      {/* Hero Section */}
       <section className="relative flex min-h-screen w-full items-center justify-center bg-ink px-4 py-20 text-center">
         <div className="absolute inset-0 overflow-hidden">
           <Image
@@ -22,7 +23,6 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
         </div>
 
-        {/* max-w-7xl estica a barra mantendo um respiro elegante nas laterais. Para encostar 100%, troque max-w-7xl por max-w-full */}
         <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-4 md:px-8">
           <div className="mb-10 flex w-full justify-center">
             <Image
@@ -39,14 +39,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Curadoria — vitrine editorial */}
-      <section className="bg-offwhite px-6 pb-20 pt-8 md:px-10">
-        <div className="mx-auto max-w-8xl">
-          <div className="grid gap-1 sm:grid-cols-2">
-            {featured.map((p, i) => (
-              <PropertyCardOverlay key={p.slug} property={p} tag={cardTags[String(i)]} />
-            ))}
-          </div>
+      {/* Curadoria — vitrine editorial de ponta a ponta */}
+      <section className="w-full bg-offwhite pb-20 pt-1">
+        <div className="grid w-full gap-1 sm:grid-cols-2">
+          {featured.map((p, i) => (
+            <PropertyCardOverlay key={p.slug} property={p} tag={cardTags[String(i)]} />
+          ))}
         </div>
       </section>
 
