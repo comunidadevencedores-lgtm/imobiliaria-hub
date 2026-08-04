@@ -41,22 +41,19 @@ export default function SearchWidget() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mx-auto flex w-full max-w-7xl flex-col gap-3 rounded-2xl border border-black/5 bg-white/95 p-3 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.35)] backdrop-blur-xl md:flex-row md:items-center md:gap-2 md:p-2.5"
+      className="mx-auto flex w-full max-w-7xl flex-col gap-3 rounded-2xl border border-black/5 bg-[#F4F4F4] p-3 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.35)] backdrop-blur-xl md:flex-row md:items-center md:gap-2 md:p-2.5"
     >
-      {/* Campo de Busca Livre com Ícone de Lupa */}
-      <div className="flex flex-1 items-center gap-2.5 px-3">
+      {/* Campo de Busca Livre com Lupa */}
+      <div className="flex flex-1 items-center gap-3 px-3">
         <svg
-          className="h-5 w-5 shrink-0 text-graphite/40"
+          className="h-6 w-6 shrink-0 text-graphite/40"
           fill="none"
           stroke="currentColor"
-          strokeWidth="2"
+          strokeWidth="1.6"
           viewBox="0 0 24 24"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-          />
+          <circle cx="10.5" cy="10.5" r="6.5" />
+          <path strokeLinecap="round" d="M15.5 15.5L20 20" />
         </svg>
         <input
           type="text"
@@ -77,7 +74,7 @@ export default function SearchWidget() {
             type="button"
             onClick={() => selectTab(t)}
             className={
-              "focus-ring rounded-xl px-3.5 py-2 text-[13px] font-semibold transition " +
+              "focus-ring rounded-xl px-4 py-2.5 text-[13px] font-semibold transition " +
               (tab === t
                 ? "bg-black/10 text-ink"
                 : "text-graphite/45 hover:text-graphite")
@@ -95,7 +92,7 @@ export default function SearchWidget() {
         <div className="flex shrink-0 items-center gap-2">
           <div className="w-36">
             <Select
-              label="Tipo de imóvel"
+              label="TIPO DE IMÓVEL"
               value={type}
               onChange={setType}
               options={typeOptions}
@@ -107,7 +104,7 @@ export default function SearchWidget() {
 
           <div className="w-36">
             <Select
-              label="Faixa de preço"
+              label="FAIXA DE PREÇO"
               value={price}
               onChange={setPrice}
               options={priceOptions}
