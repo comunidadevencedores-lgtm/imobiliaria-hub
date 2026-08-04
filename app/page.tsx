@@ -22,7 +22,8 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
         </div>
 
-        <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center justify-center">
+        {/* max-w-7xl estica a barra mantendo um respiro elegante nas laterais. Para encostar 100%, troque max-w-7xl por max-w-full */}
+        <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-4 md:px-8">
           <div className="mb-10 flex w-full justify-center">
             <Image
               src="/logo-white.png"
