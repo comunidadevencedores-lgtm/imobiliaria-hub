@@ -1,3 +1,15 @@
+import { Suspense } from "react";
+import type { Metadata } from "next";
+import Filters from "@/components/Filters";
+import PropertyCard from "@/components/PropertyCard";
+import { properties } from "@/lib/properties";
+
+export const metadata: Metadata = {
+  title: "Imóveis à venda e para alugar nas regiões nobres de Curitiba",
+  description:
+    "Filtre por região, tipo e preço e encontre imóveis novos no Batel, Bigorrilho, Água Verde, Centro Cívico, Cabral, Juvevê, Alto da XV e Champagnat.",
+};
+
 function ListingContent({
   searchParams,
 }: {
@@ -7,7 +19,6 @@ function ListingContent({
 
   let list = properties;
 
-  // Filtro por texto / busca livre (q)
   if (q) {
     const term = q.trim().toLowerCase();
     list = list.filter((p) => {
@@ -22,7 +33,6 @@ function ListingContent({
     });
   }
 
-  // Demais filtros
   if (operacao) list = list.filter((p) => p.operation === operacao);
   if (regiao) list = list.filter((p) => p.neighborhood === regiao);
   if (tipo) list = list.filter((p) => p.type === tipo);
@@ -54,5 +64,32 @@ function ListingContent({
         )}
       </div>
     </div>
+  );
+}
+
+export default function ImoveisPage({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | undefined };
+}) {
+  return (
+    <section className="mx-auto max-w-8xl px-6 py-14 md:px-10 md:py-20">
+      <p className="text-[12px] font-semibold uppercase tracking-[0.25em] text-brand">
+        Curadoria Trato Feito
+      </p>
+      <h1 className="mt-3 font-display text-[32px] font-bold text-ink md:text-[40px]">
+        Imóveis nas regiões nobres da cidade
+      </h1>
+      <p className="mt-3 max-w-xl text-[14px] text-graphite/55">
+        Todos os imóveis do nosso catálogo são empreendimentos novos, com
+        acabamento de alto padrão, em bairros consolidados perto do centro.
+      </p>
+
+      <div className="mt-10">
+        <Suspense fallback={null}>
+          <ListingContent searchParams={searchParams} />
+        </Suspense>
+      </div>
+    </section>
   );
 }
