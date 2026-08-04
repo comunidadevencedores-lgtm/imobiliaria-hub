@@ -7,16 +7,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        offwhite: "#F7F4EF",
-        ink: "#0F1A2B",
-        navy: "#152743",
-        navyLight: "#1E3A5F",
-        graphite: "#3A3A3A",
-        blueDeep: "#1E3A5F",
-        blueLight: "#5B8DB8",
-        ember: "#E8672B",
-        emberDark: "#C24E1B",
-        sand: "#EDEAE4",
+        // Paleta oficial Trato Feito (branding_ecossistema_aurizon.pdf)
+        offwhite: "#EFEFEF",
+        ink: "#1A1A1A",
+        graphite: "#333333",
+        brand: "#2E83B6",      // azul principal — CTAs, destaques
+        brandDark: "#065E93",  // azul escuro — hover, títulos institucionais
+        blueDeep: "#065E93",
+        blueLight: "#8BCDF2",
+        skyPale: "#BEE4FA",
+        sand: "#E0E0E0",
+        grey: "#676767",
+        greyLight: "#CDCCCC",
       },
       fontFamily: {
         display: ["var(--font-display)"],

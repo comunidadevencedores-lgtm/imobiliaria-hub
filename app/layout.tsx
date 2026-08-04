@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const display = Playfair_Display({
+const display = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["600", "700"],
+  weight: ["600", "700", "800"],
 });
 
 const body = Inter({
@@ -17,10 +17,10 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://imobiliariacuritiba.com.br"),
+  metadataBase: new URL("https://tfimoveis.com.br"),
   title: {
-    default: "Imobiliária Curitiba | Imóveis de alto padrão nas regiões nobres",
-    template: "%s | Imobiliária Curitiba",
+    default: "Trato Feito | Imóveis de alto padrão nas regiões nobres",
+    template: "%s | Trato Feito",
   },
   description:
     "Curadoria de imóveis novos e de alto padrão nas regiões mais desejadas de Curitiba — Batel, Bigorrilho, Água Verde, Centro Cívico e Cabral.",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     "imobiliária Curitiba",
   ],
   openGraph: {
-    title: "Imobiliária Curitiba",
+    title: "Trato Feito",
     description:
       "Curadoria de imóveis novos e de alto padrão nas regiões nobres de Curitiba.",
     locale: "pt_BR",

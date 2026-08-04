@@ -65,7 +65,7 @@ export default function Select({
             <button
               type="button"
               onClick={() => { onChange(""); setOpen(false); }}
-              className={`block w-full px-4 py-2 text-left text-[13px] transition hover:bg-sand ${!value ? "font-semibold text-ember" : "text-graphite"}`}
+              className={`block w-full px-4 py-2 text-left text-[13px] transition hover:bg-sand ${!value ? "font-semibold text-brand" : "text-graphite"}`}
             >
               {placeholder}
             </button>
@@ -75,7 +75,7 @@ export default function Select({
               <button
                 type="button"
                 onClick={() => { onChange(o.value); setOpen(false); }}
-                className={`block w-full px-4 py-2 text-left text-[13px] transition hover:bg-sand ${value === o.value ? "font-semibold text-ember" : "text-graphite"}`}
+                className={`block w-full px-4 py-2 text-left text-[13px] transition hover:bg-sand ${value === o.value ? "font-semibold text-brand" : "text-graphite"}`}
               >
                 {o.label}
               </button>

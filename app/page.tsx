@@ -17,7 +17,7 @@ export default function Home() {
             alt="Interior de imóvel de alto padrão"
             fill
             priority
-            className="object-cover opacity-100"
+            className="object-cover opacity-40"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
         </div>
@@ -25,12 +25,12 @@ export default function Home() {
         <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center justify-center">
           <div className="mb-10 flex w-full justify-center">
             <Image
-              src="/logo.png"
-              alt="Imobiliária Curitiba"
-              width={1829}
-              height={502}
+              src="/logo-white.png"
+              alt="trato.feito"
+              width={2862}
+              height={461}
               priority
-              className="h-auto w-64 object-contain drop-shadow-lg md:w-96"
+              className="h-auto w-72 object-contain drop-shadow-lg md:w-[26rem]"
             />
           </div>
 
@@ -60,8 +60,8 @@ export default function Home() {
               className="object-cover opacity-20"
             />
             <div className="relative">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-ember">
-                Imobiliária Curitiba
+              <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-brand">
+                Trato Feito
               </p>
               <h3 className="mt-3 max-w-sm font-display text-[26px] font-semibold text-white">
                 Curadoria em vez de catálogo genérico.
@@ -90,7 +90,7 @@ export default function Home() {
 
           <div className="grid gap-6">
             <div className="rounded-2xl bg-white p-7 ring-1 ring-black/5">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-ember/10 text-ember">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand/10 text-brand">
                 ✓
               </span>
               <h4 className="mt-4 font-display text-[17px] font-semibold text-ink">
@@ -127,11 +127,11 @@ export default function Home() {
             Fale com um consultor pelo WhatsApp e receba oportunidades das
             regiões nobres de Curitiba antes de irem para o site.
           </p>
-          
-           <a href={whatsappLink("Olá! Quero receber novidades de lançamentos da Imobiliária Curitiba.")}
+          <a
+            href={whatsappLink("Olá! Quero receber novidades de lançamentos da Trato Feito.")}
             target="_blank"
             rel="noreferrer"
-            className="focus-ring mt-8 inline-flex items-center gap-2 rounded-xl bg-ember px-7 py-3.5 text-[14px] font-semibold text-white transition hover:bg-emberDark"
+            className="focus-ring mt-8 inline-flex items-center gap-2 rounded-xl bg-brand px-7 py-3.5 text-[14px] font-semibold text-white transition hover:bg-brandDark"
           >
             Falar no WhatsApp →
           </a>

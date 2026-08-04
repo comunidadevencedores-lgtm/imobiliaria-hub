@@ -74,7 +74,7 @@ export default function PropertyPage({ params }: { params: { slug: string } }) {
 
       <div className="mt-10 grid gap-10 lg:grid-cols-[1fr,360px]">
         <div>
-          <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-ember">
+          <p className="text-[12px] font-semibold uppercase tracking-[0.2em] text-brand">
             {property.neighborhood} · {property.operation === "Comprar" ? "À venda" : "Para alugar"}
           </p>
           <h1 className="mt-2 font-display text-[30px] font-bold text-ink md:text-[36px]">
@@ -141,7 +141,7 @@ export default function PropertyPage({ params }: { params: { slug: string } }) {
             href={whatsappVisitLink(property.title)}
             target="_blank"
             rel="noreferrer"
-            className="focus-ring mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-ember px-5 py-3.5 text-[14px] font-semibold text-white transition hover:bg-emberDark"
+            className="focus-ring mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-brand px-5 py-3.5 text-[14px] font-semibold text-white transition hover:bg-brandDark"
           >
             Agendar visita pelo WhatsApp
           </a>

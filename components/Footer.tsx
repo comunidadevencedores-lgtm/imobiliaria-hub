@@ -44,7 +44,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-6 text-[12px] text-white/40 md:flex-row md:items-center md:justify-between">
-          <p>© {new Date().getFullYear()} Imobiliária Curitiba. Todos os direitos reservados.</p>
+          <p>© {new Date().getFullYear()} Trato Feito. Todos os direitos reservados.</p>
           <p>CRECI [a definir]</p>
         </div>
       </div>

@@ -27,7 +27,7 @@ export default function PropertyCard({
           className="object-cover transition duration-500 group-hover:scale-105"
         />
         {tag && (
-          <span className="absolute left-3 top-3 rounded-full bg-ember px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white">
+          <span className="absolute left-3 top-3 rounded-full bg-brand px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white">
             {tag}
           </span>
         )}
@@ -36,7 +36,7 @@ export default function PropertyCard({
         </span>
       </div>
       <div className="mt-4">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-ember">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand">
           {property.neighborhood}
         </p>
         <h3 className="mt-1 font-display text-[18px] font-semibold text-ink">

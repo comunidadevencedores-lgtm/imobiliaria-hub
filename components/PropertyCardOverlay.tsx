@@ -25,7 +25,7 @@ export default function PropertyCardOverlay({
       <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
       {tag && (
-        <span className="absolute left-4 top-4 rounded-full bg-ember px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+        <span className="absolute left-4 top-4 rounded-full bg-brand px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
           {tag}
         </span>
       )}
@@ -34,7 +34,7 @@ export default function PropertyCardOverlay({
       </span>
 
       <div className="absolute inset-x-0 bottom-0 p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-ember">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand">
           {property.neighborhood}
         </p>
         <h3 className="mt-1 font-display text-[19px] font-semibold text-white">

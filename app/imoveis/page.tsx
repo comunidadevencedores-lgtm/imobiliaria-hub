@@ -59,8 +59,8 @@ export default function ImoveisPage({
 }) {
   return (
     <section className="mx-auto max-w-8xl px-6 py-14 md:px-10 md:py-20">
-      <p className="text-[12px] font-semibold uppercase tracking-[0.25em] text-ember">
-        Curadoria Imobiliária Curitiba
+      <p className="text-[12px] font-semibold uppercase tracking-[0.25em] text-brand">
+        Curadoria Trato Feito
       </p>
       <h1 className="mt-3 font-display text-[32px] font-bold text-ink md:text-[40px]">
         Imóveis nas regiões nobres da cidade

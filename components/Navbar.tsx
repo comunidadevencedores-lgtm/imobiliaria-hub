@@ -54,7 +54,7 @@ export default function Navbar() {
         {/* Contatos à direita — só ícones */}
         <div className="flex items-center gap-5">
           <a
-            href="mailto:contato@imobiliariacuritiba.com.br"
+            href="mailto:contato@tfimoveis.com.br"
             aria-label="E-mail"
             className={`focus-ring transition ${iconColor}`}
           >
@@ -64,7 +64,7 @@ export default function Navbar() {
             </svg>
           </a>
           <a
-            href={whatsappLink("Olá! Gostaria de falar com um consultor da Imobiliária Curitiba.")}
+            href={whatsappLink("Olá! Gostaria de falar com um consultor da Trato Feito.")}
             target="_blank"
             rel="noreferrer"
             aria-label="WhatsApp"

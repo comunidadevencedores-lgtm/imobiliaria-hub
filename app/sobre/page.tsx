@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Sobre nós",
   description:
-    "Conheça a Imobiliária Curitiba: curadoria de imóveis novos e de alto padrão nas regiões nobres da cidade.",
+    "Conheça a Trato Feito: curadoria de imóveis novos e de alto padrão nas regiões nobres da cidade.",
 };
 
 export default function SobrePage() {
@@ -32,16 +32,16 @@ export default function SobrePage() {
         <div className="grid gap-12 lg:grid-cols-[1fr,1fr]">
           <div className="space-y-5 text-[15px] leading-relaxed text-graphite/75">
             <p>
-              A Imobiliária Curitiba nasceu com um recorte claro: 
-              em vez de tentar cobrir a cidade inteira, concentramos
-              nosso trabalho nas regiões mais nobres e centrais, Batel,
-              Bigorrilho, Água Verde, Centro Cívico, Cabral, Juvevê, Alto da XV e Champagnat.
+              A Trato Feito nasceu com um recorte claro: em vez de
+              tentar cobrir a cidade inteira, concentramos nosso trabalho nas
+              regiões mais nobres e centrais — Batel, Bigorrilho, Água Verde,
+              Centro Cívico, Cabral, Juvevê, Alto da XV e Champagnat.
             </p>
             <p>
               Trabalhamos apenas com empreendimentos novos, de alta
               qualidade construtiva e localização consolidada. Cada imóvel do
-              nosso catálogo passa por uma curadoria antes de entrar no site,
-              por isso, menos é mais: preferimos uma seleção enxuta e bem
+              nosso catálogo passa por uma curadoria antes de entrar no site
+              — por isso, menos é mais: preferimos uma seleção enxuta e bem
               documentada a um catálogo genérico.
             </p>
             <p>

@@ -90,7 +90,7 @@ export default function SearchWidget() {
 
       <button
         type="submit"
-        className="focus-ring shrink-0 rounded-xl bg-ember px-6 py-3 text-[13px] font-semibold uppercase tracking-wide text-white transition hover:bg-emberDark"
+        className="focus-ring shrink-0 rounded-xl bg-brand px-6 py-3 text-[13px] font-semibold uppercase tracking-wide text-white transition hover:bg-brandDark"
       >
         {tab === "Vender" ? "Falar com a equipe" : "Buscar"} →
       </button>

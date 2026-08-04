@@ -90,7 +90,7 @@ export default function Filters() {
         {params.toString() && (
           <button
             onClick={() => router.push("/imoveis")}
-            className="focus-ring text-[13px] font-semibold text-ember hover:text-emberDark"
+            className="focus-ring text-[13px] font-semibold text-brand hover:text-brandDark"
           >
             Limpar filtros
           </button>
