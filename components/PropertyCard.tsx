@@ -17,37 +17,60 @@ export default function PropertyCard({
   tag?: string;
 }) {
   return (
-    <Link href={`/imoveis/${property.slug}`} className="focus-ring group block">
-      <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+    <Link
+      href={`/imoveis/${property.slug}`}
+      className="group relative flex h-[380px] w-full flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-ink p-6 transition-all duration-300 md:h-[420px] md:p-8"
+    >
+      {/* Imagem de Fundo Completa */}
+      <div className="absolute inset-0 z-0">
         <Image
           src={property.cover}
           alt={property.title}
           fill
-          sizes="(min-width: 1024px) 380px, 90vw"
-          className="object-cover transition duration-500 group-hover:scale-105"
+          priority
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          className="object-cover opacity-90 transition duration-700 ease-out group-hover:scale-105"
         />
-        {tag && (
-          <span className="absolute left-3 top-3 rounded-full bg-brand px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white">
+        {/* Overlay em gradiente reforçado na base para leitura perfeita */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/20" />
+      </div>
+
+      {/* Topo: Badges */}
+      <div className="relative z-10 flex items-center justify-between">
+        {tag ? (
+          <span className="rounded-full bg-brand px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow-md">
             {tag}
           </span>
+        ) : (
+          <div />
         )}
-        <span className="absolute right-3 top-3 rounded-full bg-ink/70 px-3 py-1 text-[11px] font-medium text-white backdrop-blur">
+        <span className="rounded-full bg-black/40 px-3 py-1 text-[11px] font-medium text-white backdrop-blur-md border border-white/10">
           {property.operation === "Comprar" ? "À venda" : "Aluguel"}
         </span>
       </div>
-      <div className="mt-4">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand">
+
+      {/* Rodapé Interno: Informações sobre a foto */}
+      <div className="relative z-10 mt-auto">
+        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand">
           {property.neighborhood}
         </p>
-        <h3 className="mt-1 font-display text-[18px] font-semibold text-ink">
+
+        <h3 className="mt-1 font-display text-[20px] font-semibold text-white leading-tight md:text-[24px]">
           {property.title}
         </h3>
-        <p className="mt-1 text-[13px] text-graphite/55">
+
+        <p className="mt-1 text-[12px] font-medium text-white/70">
           {property.type} · {property.area} m² · {property.bedrooms} quartos
         </p>
-        <p className="mt-2 font-display text-[17px] font-semibold text-ink">
-          {formatPrice(property.price)}
-        </p>
+
+        <div className="mt-3 flex items-center justify-between border-t border-white/15 pt-3">
+          <p className="font-display text-[18px] font-bold text-white md:text-[20px]">
+            {formatPrice(property.price)}
+          </p>
+          <span className="text-[12px] font-semibold text-white transition-transform duration-300 group-hover:translate-x-1">
+            Ver imóvel →
+          </span>
+        </div>
       </div>
     </Link>
   );
