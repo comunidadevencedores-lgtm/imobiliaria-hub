@@ -14,8 +14,8 @@ interface PropertyCardProps {
   index?: number;
 }
 
-export default function PropertyCard({ property, index = 0 }: PropertyCardProps) {
-  const tag = cardTags[String(index)];
+export default function PropertyCard({ property, index }: PropertyCardProps) {
+  const tag = index !== undefined ? cardTags[String(index)] : undefined;
 
   return (
     <Link
@@ -40,7 +40,7 @@ export default function PropertyCard({ property, index = 0 }: PropertyCardProps)
             </span>
           )}
           <span className="rounded-full bg-black/60 px-3 py-1 text-[11px] font-medium text-white backdrop-blur-md">
-            {property.transactionType === "rent" ? "Aluguel" : "À venda"}
+            {property.operation === "Alugar" ? "Aluguel" : "À venda"}
           </span>
         </div>
 
