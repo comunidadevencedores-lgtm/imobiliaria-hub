@@ -32,3 +32,40 @@ body {
   outline: 2px solid #E8672B;
   outline-offset: 2px;
 }
+
+.whatsappFloat {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px 18px;
+
+  background: #25d366;
+  color: white;
+  border-radius: 999px;
+
+  text-decoration: none;
+  font-weight: 600;
+
+  box-shadow: 0 10px 35px rgba(0,0,0,.18);
+
+  transition: .25s ease;
+
+  z-index: 9999;
+}
+
+.whatsappFloat:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.25);
+}
+
+/* Esconde no celular */
+@media (max-width: 1024px) {
+  .whatsappFloat {
+    display: none;
+  }
+}
