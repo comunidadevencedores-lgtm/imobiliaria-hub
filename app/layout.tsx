@@ -15,9 +15,10 @@ const body = Inter({
   subsets: ["latin"],
   variable: "--font-body",
   weight: ["400", "500", "600"],
-  {children}
-
-  <WhatsAppFloat />
+  <>
+    {children}
+    <WhatsAppFloat />
+  </>
 });
 
 export const metadata: Metadata = {
