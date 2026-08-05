@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppFloat from '@/components/WhatsAppFloat'
 
 const display = Plus_Jakarta_Sans({
   subsets: ["latin"],
