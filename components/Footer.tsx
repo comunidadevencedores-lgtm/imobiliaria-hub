@@ -9,16 +9,16 @@ export default function Footer() {
       <div className="mx-auto max-w-8xl px-6 py-16 md:px-10">
         <div className="grid gap-12 md:grid-cols-[1.3fr,1fr,1fr]">
           <div>
-            {/* Bloco com o Ícone e a Logo alinhados lado a lado */}
+            {/* Logo primeiro e Ícone maior DEPOIS */}
             <div className="flex items-center gap-3">
+              <Logo variant="light" />
               <Image
                 src="/icon.png"
                 alt="Trato Feito Ícone"
-                width={36}
-                height={36}
-                className="h-8 w-auto object-contain"
+                width={56}
+                height={56}
+                className="h-12 w-auto object-contain"
               />
-              <Logo variant="light" />
             </div>
 
             <p className="mt-5 max-w-xs text-[14px] leading-relaxed text-white/60">
