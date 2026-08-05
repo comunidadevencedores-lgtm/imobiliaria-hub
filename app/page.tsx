@@ -34,7 +34,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Painel de confiança — Alinhado perfeitamente com o container do Hero */}
+      {/* Painel de confiança (Container centralizado) */}
       <section className="relative min-h-[70vh] w-full overflow-hidden bg-ink py-16 md:py-24">
         {/* Imagem de fundo */}
         <div className="absolute inset-0 z-0">
@@ -48,8 +48,8 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/70" />
         </div>
 
-        {/* Wrapper centralizado na mesma largura max-w-7xl do SearchWidget */}
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 md:px-8">
+        {/* Conteúdo sobreposto centralizado */}
+        <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-8">
           <div className="grid w-full items-stretch gap-6 lg:grid-cols-[1.2fr,1fr]">
             
             {/* Bloco principal (Esquerda) */}
@@ -84,8 +84,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Coluna da Direita */}
-            <div className="flex flex-col justify-between gap-6">
+            {/* Coluna da Direita (Alinhada perfeitamente na altura) */}
+            <div className="flex flex-col gap-6 justify-between h-full">
               <div className="flex flex-1 flex-col justify-center overflow-hidden rounded-3xl border border-white/20 bg-white/10 p-8 backdrop-blur-md shadow-2xl transition duration-300 hover:bg-white/20 hover:border-white/30 md:p-10">
                 <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/20 text-white backdrop-blur-md shadow-inner">
                   ✓
@@ -119,7 +119,7 @@ export default function Home() {
 
       {/* Captura via WhatsApp */}
       <section className="w-full bg-offwhite py-16">
-        <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
           <div className="w-full rounded-2xl border-t-4 border-blueDeep bg-white/80 p-8 text-center shadow-sm backdrop-blur-md md:p-14">
             <h3 className="font-display text-[26px] font-semibold text-ink md:text-[30px]">
               Quer saber em primeira mão dos próximos lançamentos?
