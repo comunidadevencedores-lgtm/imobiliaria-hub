@@ -33,39 +33,74 @@ body {
   outline-offset: 2px;
 }
 
-.whatsappFloat {
-  position: fixed;
-  right: 28px;
-  bottom: 28px;
+.whatsappFloat{
+    position:fixed;
+    right:32px;
+    bottom:32px;
 
-  display: flex;
-  align-items: center;
-  gap: 10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
 
-  padding: 14px 18px;
+    width:60px;
+    height:60px;
 
-  background: #25d366;
-  color: white;
-  border-radius: 999px;
+    background:#25D366;
+    color:#fff;
 
-  text-decoration: none;
-  font-weight: 600;
+    border-radius:999px;
 
-  box-shadow: 0 10px 35px rgba(0,0,0,.18);
+    box-shadow:
+      0 20px 40px rgba(37,211,102,.28),
+      0 8px 20px rgba(0,0,0,.15);
 
-  transition: .25s ease;
+    overflow:hidden;
 
-  z-index: 9999;
+    transition:
+      width .35s cubic-bezier(.4,0,.2,1),
+      transform .25s,
+      box-shadow .25s;
+
+    z-index:9999;
+    text-decoration:none;
 }
 
-.whatsappFloat:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 40px rgba(0,0,0,.25);
+.whatsappFloat span{
+    white-space:nowrap;
+    opacity:0;
+    width:0;
+    overflow:hidden;
+    font-weight:600;
+    font-size:15px;
+    transition:.25s;
 }
 
-/* Esconde no celular */
-@media (max-width: 1024px) {
-  .whatsappFloat {
-    display: none;
-  }
+.whatsappFloat:hover{
+    width:235px;
+    transform:translateY(-4px);
+}
+
+.whatsappFloat:hover span{
+    opacity:1;
+    width:145px;
+}
+
+.whatsappFloat::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    border-radius:999px;
+    background:linear-gradient(
+        135deg,
+        rgba(255,255,255,.22),
+        transparent 45%
+    );
+}
+
+@media (max-width:1024px){
+    .whatsappFloat{
+        display:none;
+    }
+}
 }
