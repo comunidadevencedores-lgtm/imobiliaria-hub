@@ -23,7 +23,7 @@ export default function PropertyCard({ property, index = 0 }: PropertyCardProps)
       className="group relative block aspect-[4/3] w-full overflow-hidden rounded-2xl bg-ink"
     >
       <Image
-        src={property.images[0]}
+        src={property.images}
         alt={property.title}
         fill
         className="object-cover transition-transform duration-500 group-hover:scale-105"
