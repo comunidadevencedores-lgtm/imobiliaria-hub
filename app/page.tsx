@@ -66,9 +66,13 @@ export default function Home() {
         <div className="relative z-10 grid w-full gap-1 sm:grid-cols-3">
           <div className="flex flex-col justify-between rounded-3xl border border-white/25 bg-white/8 p-8 backdrop-blur-sm shadow-2xl transition duration-300 hover:bg-white/15 md:p-10">
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-brand drop-shadow">
-                Trato Feito
-              </p>
+              <Image
+                src="/icon.png"
+                alt="Trato Feito Ícone"
+                width={56}
+                height={56}
+                className="h-9 w-auto self-baseline object-contain"
+              />
               <h3 className="mt-4 font-display text-[24px] font-semibold text-white leading-tight drop-shadow-md">
                 Curadoria em vez de catálogo genérico.
               </h3>
