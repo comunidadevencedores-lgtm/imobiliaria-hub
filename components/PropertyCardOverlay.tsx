@@ -22,13 +22,10 @@ export default function PropertyCardOverlay({
         sizes="(min-width: 768px) 50vw, 100vw"
         className="object-cover transition duration-500 group-hover:scale-105"
       />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
 
-      {/* REMOVIDO opacity-0: Gradiente sempre visível para dar leitura */}
-      <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/40 to-transparent" />
-
-      {/* REMOVIDO opacity-0: Badges sempre visíveis no topo */}
       {tag && (
-        <span className="absolute left-4 top-4 rounded-full bg-brand px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white shadow-sm">
+        <span className="absolute left-4 top-4 rounded-full bg-brand px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white">
           {tag}
         </span>
       )}
@@ -36,7 +33,6 @@ export default function PropertyCardOverlay({
         {property.operation === "Comprar" ? "À venda" : "Aluguel"}
       </span>
 
-      {/* REMOVIDO opacity-0: Informações sempre visíveis na base */}
       <div className="absolute inset-x-0 bottom-0 p-5">
         <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand">
           {property.neighborhood}
