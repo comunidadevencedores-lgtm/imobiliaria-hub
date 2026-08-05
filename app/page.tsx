@@ -1,7 +1,8 @@
 import Image from "next/image";
 import SearchWidget from "@/components/SearchWidget";
 import PropertyCardOverlay from "@/components/PropertyCardOverlay";
-import { FEATURED_PROPERTIES } from "@/lib/properties";
+import { cardTags } from "@/components/PropertyCard";
+import { properties } from "@/lib/properties";
 import { whatsappLink } from "@/lib/format";
 
 export default function Home() {
