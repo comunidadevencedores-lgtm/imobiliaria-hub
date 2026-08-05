@@ -17,7 +17,7 @@ export default function PropertyCardOverlay({
       href={`/imoveis/${property.slug}`}
       className="group relative block aspect-[4/3] w-full overflow-hidden rounded-2xl bg-ink"
     >
-      {/* Imagem de Fundo que dá zoom suave no hover */}
+      {/* Imagem de Fundo com zoom suave no hover */}
       <Image
         src={property.images[0]}
         alt={property.title}
@@ -25,15 +25,15 @@ export default function PropertyCardOverlay({
         className="object-cover transition-transform duration-500 group-hover:scale-105"
       />
 
-      {/* Gradiente Escuro que aparece apenas no Hover */}
+      {/* Gradiente Escuro (Aparece no Hover) */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-      {/* Conteúdo com as Informações: invisível por padrão (opacity-0) e visível no hover (group-hover:opacity-100) */}
+      {/* Conteúdo sobreposto (Aparece no Hover) */}
       <div className="absolute inset-0 flex flex-col justify-between p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-        {/* Tags no topo */}
+        {/* Badges do Topo */}
         <div className="flex items-center justify-between">
           {tag && (
-            <span className="rounded-full bg-brand px-3 py-1 text-[11px] font-semibold tracking-wider text-white uppercase">
+            <span className="rounded-full bg-brand px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
               {tag}
             </span>
           )}
@@ -42,7 +42,7 @@ export default function PropertyCardOverlay({
           </span>
         </div>
 
-        {/* Informações do Imóvel no rodapé do Card */}
+        {/* Informações do Rodapé */}
         <div className="text-white">
           <p className="text-[12px] font-medium uppercase tracking-widest text-white/70">
             {property.neighborhood}
