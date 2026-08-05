@@ -48,7 +48,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Painel de confiança — Imagem Fullscreen de fundo com botões "água" (glassmorphism) */}
+      {/* Painel de confiança — Banner Fullscreen de fundo com efeito água (glassmorphism) */}
       <section className="relative min-h-[80vh] w-full overflow-hidden bg-ink py-16 md:py-24">
         {/* Imagem de fundo cobrindo tudo de ponta a ponta */}
         <div className="absolute inset-0 z-0">
@@ -65,8 +65,8 @@ export default function Home() {
         {/* Conteúdo sobreposto */}
         <div className="relative z-10 w-full px-4 md:px-8">
           <div className="grid w-full gap-6 lg:grid-cols-[1.2fr,1fr]">
-            {/* Bloco de texto principal em caixa "água" translúcida */}
-            <div className="flex flex-col justify-between rounded-3xl border border-white/15 bg-white/10 p-8 backdrop-blur-xl shadow-2xl md:p-12">
+            {/* Bloco de texto principal em caixa translúcida */}
+            <div className="flex flex-col justify-between rounded-3xl border border-white/20 bg-white/10 p-8 backdrop-blur-xl shadow-2xl md:p-12">
               <div>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-brand">
                   Trato Feito
@@ -81,7 +81,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="mt-10 flex gap-12 border-t border-white/10 pt-6">
+              <div className="mt-10 flex gap-12 border-t border-white/15 pt-6">
                 <div>
                   <p className="font-display text-[32px] font-bold text-white">8</p>
                   <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-white/60">
@@ -97,7 +97,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Cards da direita estilo "gota d'água" */}
+            {/* Cards da direita estilo "água / vidro" */}
             <div className="grid gap-6">
               <div className="group rounded-3xl border border-white/20 bg-white/10 p-8 backdrop-blur-xl shadow-2xl transition duration-300 hover:bg-white/20 hover:border-white/30">
                 <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/20 text-white backdrop-blur-md shadow-inner">
@@ -124,37 +124,6 @@ export default function Home() {
                   direto com um consultor, pelo WhatsApp.
                 </p>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-          {/* Caixas Transparentes (estilo botão glassmorphism) */}
-          <div className="grid gap-4">
-            <div className="group rounded-2xl border border-black/5 bg-white/40 p-7 backdrop-blur-md transition hover:bg-white/60 hover:shadow-lg">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand/10 text-brand">
-                ✓
-              </span>
-              <h4 className="mt-4 font-display text-[17px] font-semibold text-ink">
-                Curadoria criteriosa
-              </h4>
-              <p className="mt-2 text-[13px] leading-relaxed text-graphite/70">
-                Só entram no catálogo imóveis novos, de alto padrão, com
-                localização e construtora verificadas.
-              </p>
-            </div>
-
-            <div className="group rounded-2xl border border-black/5 bg-white/40 p-7 backdrop-blur-md transition hover:bg-white/60 hover:shadow-lg">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-blueDeep/10 text-blueDeep">
-                →
-              </span>
-              <h4 className="mt-4 font-display text-[17px] font-semibold text-ink">
-                Atendimento direto
-              </h4>
-              <p className="mt-2 text-[13px] leading-relaxed text-graphite/70">
-                Sem formulários longos: toda dúvida e visita são combinadas
-                direto com um consultor, pelo WhatsApp.
-              </p>
             </div>
           </div>
         </div>
