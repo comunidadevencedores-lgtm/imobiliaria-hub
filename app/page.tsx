@@ -48,7 +48,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Painel de confiança — Banner Fullscreen de fundo com efeito água (glassmorphism) */}
+      {/* Painel de confiança — Banner Fullscreen de fundo com alinhamento cravado */}
       <section className="relative min-h-[80vh] w-full overflow-hidden bg-ink py-16 md:py-24">
         {/* Imagem de fundo cobrindo tudo de ponta a ponta */}
         <div className="absolute inset-0 z-0">
@@ -62,9 +62,10 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/70" />
         </div>
 
-        {/* Conteúdo sobreposto com alinhamento preciso no topo */}
+        {/* Conteúdo sobreposto */}
         <div className="relative z-10 w-full px-4 md:px-8">
-          <div className="grid w-full items-start gap-6 lg:grid-cols-[1.2fr,1fr]">
+          {/* items-stretch força a coluna da esquerda e da direita a terem EXATAMENTE a mesma altura total */}
+          <div className="grid w-full items-stretch gap-6 lg:grid-cols-[1.2fr,1fr]">
             
             {/* Bloco de texto principal (Esquerda) */}
             <div className="flex flex-col justify-between rounded-3xl border border-white/20 bg-white/10 p-8 backdrop-blur-xl shadow-2xl md:p-12">
@@ -98,9 +99,10 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Cards da direita */}
-            <div className="grid gap-6">
-              <div className="group rounded-3xl border border-white/20 bg-white/10 p-8 backdrop-blur-xl shadow-2xl transition duration-300 hover:bg-white/20 hover:border-white/30 md:p-12">
+            {/* Coluna de Cards da Direita (Flexbox na altura total) */}
+            <div className="flex flex-col gap-6">
+              {/* flex-1 garante que cada card ocupe exatamente metade da altura total da coluna */}
+              <div className="flex flex-1 flex-col justify-center group rounded-3xl border border-white/20 bg-white/10 p-8 backdrop-blur-xl shadow-2xl transition duration-300 hover:bg-white/20 hover:border-white/30 md:p-12">
                 <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/20 text-white backdrop-blur-md shadow-inner">
                   ✓
                 </span>
@@ -113,7 +115,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="group rounded-3xl border border-white/20 bg-white/10 p-8 backdrop-blur-xl shadow-2xl transition duration-300 hover:bg-white/20 hover:border-white/30 md:p-12">
+              <div className="flex flex-1 flex-col justify-center group rounded-3xl border border-white/20 bg-white/10 p-8 backdrop-blur-xl shadow-2xl transition duration-300 hover:bg-white/20 hover:border-white/30 md:p-12">
                 <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/20 text-white backdrop-blur-md shadow-inner">
                   →
                 </span>
