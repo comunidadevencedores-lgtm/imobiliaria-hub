@@ -50,45 +50,44 @@ export default function Home() {
 
       {/* PAINEL DE CONFIANÇA - Efeito Água / Liquid Glass Puro & Fundo Destacado */}
       <section className="relative min-h-[80vh] w-full overflow-hidden bg-ink py-1">
-        {/* Imagem de Fundo de Curitiba (Mais nítida/visível) */}
+        {/* Imagem de Fundo de Curitiba (bem viva, quase sem véu escuro) */}
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=2000&q=80"
             alt="Curitiba"
             fill
             priority
-            className="object-cover opacity-75"
+            className="object-cover opacity-95"
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-black/15" />
         </div>
 
-        {/* Grade alinhada exatamente à dos imóveis (gap-1 de ponta a ponta) */}
-        <div className="relative z-10 grid w-full gap-1 sm:grid-cols-2">
-          {/* Card Esquerdo estilo Vidro / Água Límpida */}
-          <div className="flex flex-col justify-between rounded-3xl border border-white/30 bg-white/15 p-8 backdrop-blur-md shadow-2xl transition duration-300 hover:bg-white/20 md:p-12">
+        {/* 3 cards iguais, lado a lado, mesmo tamanho dos cards de imóvel acima */}
+        <div className="relative z-10 grid w-full gap-1 sm:grid-cols-3">
+          <div className="flex flex-col justify-between rounded-3xl border border-white/25 bg-white/8 p-8 backdrop-blur-sm shadow-2xl transition duration-300 hover:bg-white/15 md:p-10">
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-brand drop-shadow">
                 Trato Feito
               </p>
-              <h3 className="mt-4 font-display text-[28px] font-semibold text-white leading-tight drop-shadow-md md:text-[36px]">
+              <h3 className="mt-4 font-display text-[24px] font-semibold text-white leading-tight drop-shadow-md">
                 Curadoria em vez de catálogo genérico.
               </h3>
-              <p className="mt-4 text-[15px] leading-relaxed text-white/90 drop-shadow">
+              <p className="mt-4 text-[14px] leading-relaxed text-white/90 drop-shadow">
                 Trabalhamos só com empreendimentos novos, nas regiões mais
                 consolidadas e desejadas de Curitiba. Cada imóvel passa por
                 uma seleção antes de entrar no site.
               </p>
             </div>
 
-            <div className="mt-10 flex gap-12 border-t border-white/25 pt-6">
+            <div className="mt-10 flex gap-10 border-t border-white/25 pt-6">
               <div>
-                <p className="font-display text-[32px] font-bold text-white drop-shadow">8</p>
+                <p className="font-display text-[28px] font-bold text-white drop-shadow">8</p>
                 <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-white/80">
                   Regiões nobres
                 </p>
               </div>
               <div>
-                <p className="font-display text-[32px] font-bold text-white drop-shadow">100%</p>
+                <p className="font-display text-[28px] font-bold text-white drop-shadow">100%</p>
                 <p className="mt-1 text-[11px] font-medium uppercase tracking-wider text-white/80">
                   Empreendimentos novos
                 </p>
@@ -96,33 +95,30 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Cards Direitos estilo Vidro / Água Límpida */}
-          <div className="grid gap-1">
-            <div className="group flex flex-col justify-center rounded-3xl border border-white/30 bg-white/15 p-8 backdrop-blur-md shadow-2xl transition duration-300 hover:bg-white/20 md:p-10">
-              <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/25 text-white backdrop-blur-md shadow-inner border border-white/30">
-                ✓
-              </span>
-              <h4 className="mt-5 font-display text-[20px] font-semibold text-white drop-shadow-md">
-                Curadoria criteriosa
-              </h4>
-              <p className="mt-2 text-[14px] leading-relaxed text-white/90 drop-shadow">
-                Só entram no catálogo imóveis novos, de alto padrão, com
-                localização e construtora verificadas.
-              </p>
-            </div>
+          <div className="group flex flex-col justify-center rounded-3xl border border-white/25 bg-white/8 p-8 backdrop-blur-sm shadow-2xl transition duration-300 hover:bg-white/15 md:p-10">
+            <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/20 text-white backdrop-blur-sm shadow-inner border border-white/30">
+              ✓
+            </span>
+            <h4 className="mt-5 font-display text-[20px] font-semibold text-white drop-shadow-md">
+              Curadoria criteriosa
+            </h4>
+            <p className="mt-2 text-[14px] leading-relaxed text-white/90 drop-shadow">
+              Só entram no catálogo imóveis novos, de alto padrão, com
+              localização e construtora verificadas.
+            </p>
+          </div>
 
-            <div className="group flex flex-col justify-center rounded-3xl border border-white/30 bg-white/15 p-8 backdrop-blur-md shadow-2xl transition duration-300 hover:bg-white/20 md:p-10">
-              <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/25 text-white backdrop-blur-md shadow-inner border border-white/30">
-                →
-              </span>
-              <h4 className="mt-5 font-display text-[20px] font-semibold text-white drop-shadow-md">
-                Atendimento direto
-              </h4>
-              <p className="mt-2 text-[14px] leading-relaxed text-white/90 drop-shadow">
-                Sem formulários longos: toda dúvida e visita são combinadas
-                direto com um consultor, pelo WhatsApp.
-              </p>
-            </div>
+          <div className="group flex flex-col justify-center rounded-3xl border border-white/25 bg-white/8 p-8 backdrop-blur-sm shadow-2xl transition duration-300 hover:bg-white/15 md:p-10">
+            <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/20 text-white backdrop-blur-sm shadow-inner border border-white/30">
+              →
+            </span>
+            <h4 className="mt-5 font-display text-[20px] font-semibold text-white drop-shadow-md">
+              Atendimento direto
+            </h4>
+            <p className="mt-2 text-[14px] leading-relaxed text-white/90 drop-shadow">
+              Sem formulários longos: toda dúvida e visita são combinadas
+              direto com um consultor, pelo WhatsApp.
+            </p>
           </div>
         </div>
       </section>
