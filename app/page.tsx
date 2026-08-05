@@ -39,17 +39,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Curadoria — vitrine editorial de ponta a ponta */}
-      <section className="w-full bg-offwhite pb-1 pt-1">
-        <div className="grid w-full gap-1 sm:grid-cols-2">
-          {featured.map((p, i) => (
-            <PropertyCardOverlay key={p.slug} property={p} tag={cardTags[String(i)]} />
-          ))}
-        </div>
-      </section>
-
-      {/* Painel de confiança com alinhamento perfeito de topo, base e paddings */}
-      <section className="relative min-h-[80vh] w-full overflow-hidden bg-ink py-16 md:py-24">
+      {/* Painel de confiança com alinhamento de borda a borda igual ao bloco de cima */}
+      <section className="relative min-h-[80vh] w-full overflow-hidden bg-ink py-12 md:py-16">
         {/* Imagem de fundo */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -62,13 +53,13 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/70" />
         </div>
 
-        {/* Conteúdo sobreposto centralizado */}
-        <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-8">
-          {/* Grid com items-stretch e h-full para forçar altura idêntica nas duas colunas */}
-          <div className="grid w-full items-stretch gap-6 lg:grid-cols-[1.2fr,1fr]">
+        {/* Conteúdo sobreposto sem padding sobressalente */}
+        <div className="relative z-10 w-full px-1">
+          {/* Grid com items-stretch e alinhamento total */}
+          <div className="grid w-full items-stretch gap-1 lg:grid-cols-[1.2fr,1fr]">
             
             {/* Bloco principal (Esquerda) */}
-            <div className="flex flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-white/10 p-8 backdrop-blur-md shadow-2xl md:p-10">
+            <div className="flex flex-col justify-between overflow-hidden rounded-2xl border border-white/20 bg-white/10 p-8 backdrop-blur-md shadow-2xl md:p-12">
               <div>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-brand">
                   Trato Feito
@@ -99,9 +90,9 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Coluna da Direita (Força os dois cards a dividirem a altura total da esquerda) */}
-            <div className="flex flex-col gap-6 h-full justify-between">
-              <div className="flex flex-1 flex-col justify-center overflow-hidden rounded-3xl border border-white/20 bg-white/10 p-8 backdrop-blur-md shadow-2xl transition duration-300 hover:bg-white/20 hover:border-white/30 md:p-10">
+            {/* Coluna da Direita */}
+            <div className="flex flex-col gap-1 justify-between h-full">
+              <div className="flex flex-1 flex-col justify-center overflow-hidden rounded-2xl border border-white/20 bg-white/10 p-8 backdrop-blur-md shadow-2xl transition duration-300 hover:bg-white/20 hover:border-white/30 md:p-10">
                 <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/20 text-white backdrop-blur-md shadow-inner">
                   ✓
                 </span>
@@ -114,7 +105,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="flex flex-1 flex-col justify-center overflow-hidden rounded-3xl border border-white/20 bg-white/10 p-8 backdrop-blur-md shadow-2xl transition duration-300 hover:bg-white/20 hover:border-white/30 md:p-10">
+              <div className="flex flex-1 flex-col justify-center overflow-hidden rounded-2xl border border-white/20 bg-white/10 p-8 backdrop-blur-md shadow-2xl transition duration-300 hover:bg-white/20 hover:border-white/30 md:p-10">
                 <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/20 text-white backdrop-blur-md shadow-inner">
                   →
                 </span>
