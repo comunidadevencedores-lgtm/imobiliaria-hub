@@ -13,12 +13,11 @@ export default function WhatsAppFloat() {
       aria-label="WhatsApp"
     >
       <Image
-        src="/whatsapp.png"
+        src="/whatsapp.svg"
         alt="WhatsApp"
         width={64}
         height={64}
-        priority
-      />
+        />
     </Link>
   )
 }
