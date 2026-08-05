@@ -19,7 +19,7 @@ export default function PropertyCardOverlay({
     >
       {/* Imagem de Fundo com zoom suave no hover */}
       <Image
-        src={property.images[0]}
+        src={property.cover}
         alt={property.title}
         fill
         className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -38,7 +38,7 @@ export default function PropertyCardOverlay({
             </span>
           )}
           <span className="rounded-full bg-black/60 px-3 py-1 text-[11px] font-medium text-white backdrop-blur-md">
-            {property.transactionType === "rent" ? "Aluguel" : "À venda"}
+            {property.operation === "Alugar" ? "Aluguel" : "À venda"}
           </span>
         </div>
 
@@ -61,3 +61,4 @@ export default function PropertyCardOverlay({
     </Link>
   );
 }
+
