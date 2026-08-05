@@ -11,33 +11,25 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative flex min-h-screen w-full items-center justify-center bg-ink px-4 py-20 text-center">
-        <div className="absolute inset-0 overflow-hidden">
-          <Image
-            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=80"
-            alt="Interior de imóvel de alto padrão"
-            fill
-            priority
-            className="object-cover opacity-40"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
-        </div>
+      <section className="relative w-full overflow-hidden bg-ink py-16 md:py-24">
+  <div className="relative z-10 mx-auto w-full max-w-7xl px-4 md:px-8">
+    {/* GRID 2: Exatamente as mesmas classes (gap-6 e lg:grid-cols-[1.2fr,1fr]) */}
+    <div className="grid w-full items-stretch gap-6 lg:grid-cols-[1.2fr,1fr]">
+      
+      {/* Bloco principal (Esquerda) */}
+      <div className="flex flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-white/10 p-8 backdrop-blur-md shadow-2xl md:p-12">
+        {/* Conteúdo Curadoria... */}
+      </div>
 
-        <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-4 md:px-8">
-          <div className="mb-10 flex w-full justify-center">
-            <Image
-              src="/logo-white.png"
-              alt="trato.feito"
-              width={2862}
-              height={461}
-              priority
-              className="h-auto w-72 object-contain drop-shadow-lg md:w-[26rem]"
-            />
-          </div>
+      {/* Coluna da Direita */}
+      <div className="flex flex-col justify-between gap-6">
+        {/* Card Curadoria criteriosa */}
+        {/* Card Atendimento direto */}
+      </div>
 
-          <SearchWidget />
-        </div>
-      </section>
+    </div>
+  </div>
+</section>
 
       {/* Curadoria — vitrine editorial de ponta a ponta */}
       <section className="w-full bg-offwhite pb-1 pt-1">
