@@ -6,6 +6,8 @@ import { properties } from "@/lib/properties";
 import { whatsappLink } from "@/lib/format";
 
 export default function Home() {
+  const featured = properties.slice(0, 2);
+
   return (
     <>
       {/* Hero Section */}
@@ -37,23 +39,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Destaques / Vitrine */}
+      {/* Curadoria — alinhada rigorosamente com a seção de baixo */}
       <section className="w-full bg-ink py-12">
         <div className="mx-auto w-full max-w-7xl px-4 md:px-8">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            {FEATURED_PROPERTIES.slice(0, 2).map((property, idx) => (
-              <PropertyCardOverlay
-                key={property.id}
-                property={property}
-                tag={idx === 0 ? "Lançamento" : undefined}
-              />
+          <div className="grid w-full items-stretch gap-6 lg:grid-cols-[1.2fr,1fr]">
+            {featured.map((p, i) => (
+              <PropertyCardOverlay key={p.slug} property={p} tag={cardTags[String(i)]} />
             ))}
           </div>
         </div>
       </section>
 
       {/* Painel de confiança */}
-      <section className="relative min-h-[70vh] w-full overflow-hidden bg-ink py-16 md:py-24">
+      <section className="relative min-h-[80vh] w-full overflow-hidden bg-ink py-16 md:py-24">
+        {/* Imagem de fundo */}
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=2000&q=80"
@@ -65,9 +64,11 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/70" />
         </div>
 
+        {/* Conteúdo sobreposto */}
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 md:px-8">
           <div className="grid w-full items-stretch gap-6 lg:grid-cols-[1.2fr,1fr]">
-            <div className="flex flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-white/10 p-8 backdrop-blur-md shadow-2xl md:p-12">
+            {/* Bloco principal (Esquerda) */}
+            <div className="flex flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-white/10 p-8 backdrop-blur-md shadow-2xl md:p-10">
               <div>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-brand">
                   Trato Feito
@@ -98,7 +99,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex flex-col justify-between gap-6">
+            {/* Coluna da Direita */}
+            <div className="flex flex-col gap-6">
               <div className="flex flex-1 flex-col justify-center overflow-hidden rounded-3xl border border-white/20 bg-white/10 p-8 backdrop-blur-md shadow-2xl transition duration-300 hover:bg-white/20 hover:border-white/30 md:p-10">
                 <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/20 text-white backdrop-blur-md shadow-inner">
                   ✓
