@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 export default function SobrePage() {
   return (
     <section>
+      {/* Banner Superior */}
       <div className="relative flex h-[52vh] min-h-[380px] items-end overflow-hidden bg-ink">
         <Image
           src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=2000&q=80"
@@ -28,9 +29,12 @@ export default function SobrePage() {
         </div>
       </div>
 
+      {/* Conteúdo Principal com alinhamento de borda a borda */}
       <div className="mx-auto max-w-8xl px-6 py-16 md:px-10">
-        <div className="grid gap-12 lg:grid-cols-[1fr,1fr]">
-          <div className="space-y-5 text-[15px] leading-relaxed text-graphite/75">
+        <div className="grid gap-12 items-stretch lg:grid-cols-[1fr,1fr]">
+          
+          {/* Coluna da Esquerda: Texto */}
+          <div className="flex flex-col justify-between space-y-5 text-[15px] leading-relaxed text-graphite/75">
             <p>
               A Trato Feito nasceu com um recorte claro: em vez de
               tentar cobrir a cidade inteira, concentramos nosso trabalho nas
@@ -51,14 +55,18 @@ export default function SobrePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          {/* Coluna da Direita: Cards de Métricas alinhados na mesma altura */}
+          <div className="grid grid-cols-2 gap-4 h-full">
             {[
               ["Regiões", "8 bairros nobres"],
               ["Padrão", "100% empreendimentos novos"],
               ["Ticket", "Imóveis a partir de R$ 400 mil"],
               ["Atendimento", "Direto pelo WhatsApp"],
             ].map(([label, value]) => (
-              <div key={label} className="rounded-2xl bg-white p-6 ring-1 ring-black/5">
+              <div
+                key={label}
+                className="flex flex-col justify-between rounded-2xl bg-white p-6 ring-1 ring-black/5 shadow-sm"
+              >
                 <p className="text-[11px] font-semibold uppercase tracking-wide text-graphite/40">
                   {label}
                 </p>
@@ -68,6 +76,7 @@ export default function SobrePage() {
               </div>
             ))}
           </div>
+
         </div>
       </div>
     </section>
