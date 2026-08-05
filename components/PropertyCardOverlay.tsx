@@ -13,7 +13,7 @@ export default function PropertyCardOverlay({
   return (
     <Link
       href={`/imoveis/${property.slug}`}
-      className="focus-ring group relative block aspect-[16/10] overflow-hidden rounded"
+      className="focus-ring group relative block aspect-[16/10] overflow-hidden rounded-2xl"
     >
       <Image
         src={property.cover}
@@ -22,18 +22,22 @@ export default function PropertyCardOverlay({
         sizes="(min-width: 768px) 50vw, 100vw"
         className="object-cover transition duration-500 group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
+      {/* REMOVIDO opacity-0: Gradiente sempre visível para dar leitura */}
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/40 to-transparent" />
+
+      {/* REMOVIDO opacity-0: Badges sempre visíveis no topo */}
       {tag && (
-        <span className="absolute left-4 top-4 rounded-full bg-brand px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+        <span className="absolute left-4 top-4 rounded-full bg-brand px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white shadow-sm">
           {tag}
         </span>
       )}
-      <span className="absolute right-4 top-4 rounded-full bg-ink/70 px-3 py-1 text-[11px] font-medium text-white opacity-0 backdrop-blur transition-opacity duration-300 group-hover:opacity-100">
+      <span className="absolute right-4 top-4 rounded-full bg-ink/70 px-3 py-1 text-[11px] font-medium text-white backdrop-blur">
         {property.operation === "Comprar" ? "À venda" : "Aluguel"}
       </span>
 
-      <div className="absolute inset-x-0 bottom-0 p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+      {/* REMOVIDO opacity-0: Informações sempre visíveis na base */}
+      <div className="absolute inset-x-0 bottom-0 p-5">
         <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-brand">
           {property.neighborhood}
         </p>
