@@ -62,9 +62,9 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/70" />
         </div>
 
-        {/* Conteúdo sobreposto */}
-        <div className="relative z-10 w-full px-4 md:px-8">
-          {/* items-stretch alinha topo e base das colunas na mesma linha */}
+        {/* Conteúdo sobreposto centralizado */}
+        <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-8">
+          {/* Grid com items-stretch e h-full para forçar altura idêntica nas duas colunas */}
           <div className="grid w-full items-stretch gap-6 lg:grid-cols-[1.2fr,1fr]">
             
             {/* Bloco principal (Esquerda) */}
@@ -99,8 +99,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Coluna da Direita (Mesma divisão proporcional e paddings pareados) */}
-            <div className="flex flex-col gap-6">
+            {/* Coluna da Direita (Força os dois cards a dividirem a altura total da esquerda) */}
+            <div className="flex flex-col gap-6 h-full justify-between">
               <div className="flex flex-1 flex-col justify-center overflow-hidden rounded-3xl border border-white/20 bg-white/10 p-8 backdrop-blur-md shadow-2xl transition duration-300 hover:bg-white/20 hover:border-white/30 md:p-10">
                 <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/20 text-white backdrop-blur-md shadow-inner">
                   ✓
