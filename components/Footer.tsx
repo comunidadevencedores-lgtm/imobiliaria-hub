@@ -9,19 +9,17 @@ export default function Footer() {
       <div className="mx-auto max-w-8xl px-6 py-16 md:px-10">
         <div className="grid gap-12 md:grid-cols-[1.3fr,1fr,1fr]">
           <div>
-            {/* Logo primeiro e Ícone na mesma linha exata */}
-            <div className="flex items-center gap-3">
-              <div className="flex items-center">
-                <Logo variant="light" />
-              </div>
-              <Image
-                src="/icon.png"
-                alt="Trato Feito Ícone"
-                width={56}
-                height={56}
-                className="h-10 w-auto -translate-y-[1px] object-contain"
-              />
-            </div>
+            {/* Logo primeiro e Ícone ajustado visualmente na mesma linha */}
+<div className="flex items-center gap-3">
+  <Logo variant="light" />
+  <Image
+    src="/icon.png"
+    alt="Trato Feito Ícone"
+    width={56}
+    height={56}
+    className="h-10 w-auto -translate-y-[5px] object-contain"
+  />
+</div>
 
             <p className="mt-5 max-w-xs text-[14px] leading-relaxed text-white/60">
               Curadoria de imóveis novos e de alto padrão nas regiões mais
